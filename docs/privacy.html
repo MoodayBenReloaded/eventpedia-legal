@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- noindex while [FILL] placeholders remain: an unfinished legal page
+     that search engines have cached is worse than one nobody can find.
+     Remove this line once every placeholder is filled. -->
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy · EVENTPEDIA</title>
+<meta name="description" content="What EVENTPEDIA collects, why, and how to delete it.">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="brand" href="./index.html">EVENT<span>PEDIA</span></a>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">
+    Last updated: <span class="fill">[FILL: DATE]</span> ·
+    Applies to the EVENTPEDIA mobile app and <code>eventpedia.app</code>
+  </p>
+
+  <div class="callout">
+    <strong>Before publishing.</strong> Every <span class="fill">[FILL: …]</span>
+    below needs a real value, and this document should be reviewed by a Thai
+    lawyer familiar with the <abbr title="Personal Data Protection Act B.E. 2562">PDPA</abbr>.
+    It describes what the software actually does today — it is an accurate
+    engineering account, not legal advice, and it is not a substitute for review.
+  </div>
+
+  <h2>Who we are</h2>
+  <p>
+    EVENTPEDIA is operated by <span class="fill">[FILL: LEGAL ENTITY NAME]</span>,
+    registered at <span class="fill">[FILL: REGISTERED ADDRESS]</span>
+    <span class="fill">[FILL: COMPANY REGISTRATION NUMBER, if applicable]</span>.
+    For anything in this policy, contact
+    <span class="fill">[FILL: CONTACT EMAIL]</span>.
+  </p>
+  <p class="note">
+    Under the PDPA you may also need to name a Data Controller and, depending on
+    scale, a Data Protection Officer:
+    <span class="fill">[FILL: DPO NAME + CONTACT, or confirm not required]</span>.
+  </p>
+
+  <h2>The short version</h2>
+  <ul>
+    <li>You can browse the entire app <strong>without giving us your name or email</strong>.</li>
+    <li>Our analytics never receive your email, username, or display name — only a random id.</li>
+    <li>Your location is used to sort events by distance. We do not store it.</li>
+    <li>You can delete your account and personal data from inside the app.</li>
+  </ul>
+
+  <h2>Accounts</h2>
+  <p>
+    On first launch the app creates an <strong>anonymous account</strong> so you
+    can browse and save events immediately. It is tied to your device, stored in
+    the device keychain, and contains no personal information.
+  </p>
+  <p>
+    If you create a profile we store the <strong>username</strong> and
+    <strong>display name</strong> you choose, and optionally a
+    <strong>short bio</strong>, a <strong>link</strong>, a
+    <strong>profile picture</strong>, and your <strong>language preference</strong>.
+    Adding an <strong>email address</strong> is optional; its only purpose is to
+    let you recover your account on another device. We verify it with a one-time
+    code. We do not send marketing email.
+  </p>
+
+  <h2>What we collect, and why</h2>
+  <table>
+    <thead><tr><th>Data</th><th>Why</th><th>When</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Anonymous account id</td>
+        <td>So saved events and follows persist</td>
+        <td>First launch, automatically</td>
+      </tr>
+      <tr>
+        <td>Username, display name, bio, link, avatar, language</td>
+        <td>Your public profile</td>
+        <td>Only if you create a profile</td>
+      </tr>
+      <tr>
+        <td>Email address</td>
+        <td>Account recovery</td>
+        <td>Only if you choose to add one</td>
+      </tr>
+      <tr>
+        <td>Saved / going events, follows, blocked accounts</td>
+        <td>The core features</td>
+        <td>When you use them</td>
+      </tr>
+      <tr>
+        <td>Events you publish, and images you upload for them</td>
+        <td>To show them in the public catalogue</td>
+        <td>Only if you host an event</td>
+      </tr>
+      <tr>
+        <td>Push notification token</td>
+        <td>To deliver notifications you enabled</td>
+        <td>Only after you grant permission</td>
+      </tr>
+      <tr>
+        <td>Approximate location (coordinates)</td>
+        <td>To rank events by distance</td>
+        <td>Only while you use the map, and only if you allow it</td>
+      </tr>
+      <tr>
+        <td>Product analytics events</td>
+        <td>To understand which features are used</td>
+        <td>Continuously, tied to a random id</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Location</h2>
+  <p>
+    Location is <strong>optional</strong>. The app asks only when you open the
+    map view. If you decline, the map simply centres on Bangkok and everything
+    else keeps working.
+  </p>
+  <p>
+    If you allow it, your coordinates are sent to our backend
+    <strong>to run the distance query and are not written to our database</strong>.
+    We do not keep a location history, and we do not track you in the background —
+    the app requests foreground location only.
+  </p>
+
+  <h2>Analytics</h2>
+  <p>
+    We use <strong>PostHog</strong> (EU-hosted, <code>eu.i.posthog.com</code>) to
+    measure product usage: screens opened, events viewed and saved, searches,
+    filters, shares, and notification permission outcomes.
+  </p>
+  <p>
+    Analytics are identified by a <strong>random id only</strong>. We never send
+    your email address, username, or display name to PostHog. Before you create a
+    profile, events carry a device-generated anonymous id; afterwards they carry
+    your account id. Signing out returns you to a fresh anonymous id.
+  </p>
+  <p class="note">
+    Analytics are switched off entirely in our development builds, so our own
+    testing never enters the data.
+  </p>
+
+  <h2>Push notifications</h2>
+  <p>
+    If you enable notifications we store a <strong>push token</strong> for your
+    device so we can deliver them. Tokens are sent to Expo's push service, which
+    passes them to Apple or Google for delivery. You can turn notifications off
+    per type in Settings, or entirely in your device settings; when a token stops
+    working we mark it inactive and stop sending to it.
+  </p>
+
+  <h2>Where your data is stored</h2>
+  <p>
+    Our database, authentication and file storage run on <strong>Supabase</strong>
+    in the <strong>Singapore</strong> region. Analytics are processed by PostHog
+    in the <strong>European Union</strong>. Push delivery is handled by
+    <strong>Expo</strong> and by Apple's and Google's notification services.
+  </p>
+  <p class="note">
+    This means personal data is transferred outside Thailand.
+    <span class="fill">[FILL: confirm the PDPA cross-border transfer basis you
+    are relying on, and list it here]</span>
+  </p>
+
+  <h2>Who can see what</h2>
+  <p>
+    Your <strong>profile</strong> (username, display name, bio, link, picture) and
+    any <strong>events you publish</strong> are public. Your
+    <strong>saved and going events, follows, blocked accounts, notification
+    settings and push tokens are private</strong> to you — enforced in the
+    database, not just in the app.
+  </p>
+  <p>
+    Blocking is mutual in effect: a blocked account cannot see you and you cannot
+    see them, in either direction.
+  </p>
+
+  <h2>Deleting your account</h2>
+  <p>
+    Settings → Delete account. You will be asked to type your username to
+    confirm. This permanently deletes your profile, saved and going events,
+    follows, blocked accounts, notifications, notification settings and push
+    tokens. It cannot be undone.
+  </p>
+  <div class="callout">
+    <strong>One thing survives, deliberately.</strong> Events you
+    <em>published</em> stay in the public catalogue under your host name, and are
+    unlinked from your account. This is so people holding tickets to your event
+    are not stranded by your account deletion. If you want a published event
+    removed as well, cancel it before deleting your account, or contact us at
+    <span class="fill">[FILL: CONTACT EMAIL]</span>.
+  </div>
+
+  <h2>Event listings from other sources</h2>
+  <p>
+    Some listings are gathered from public event calendars and venue websites.
+    For those we publish <strong>facts only</strong> — name, venue, date and
+    time, category and price — together with a link to the original listing. We
+    do not copy descriptions or artwork from other sites. If you are a source or
+    a rights-holder and want a listing changed or removed, contact
+    <span class="fill">[FILL: CONTACT EMAIL]</span> and we will act on it.
+  </p>
+
+  <h2>Your rights</h2>
+  <p>
+    Under the PDPA you may request access to, correction of, or deletion of your
+    personal data, object to processing, and withdraw consent. Deletion and
+    correction are available directly in the app; for anything else contact
+    <span class="fill">[FILL: CONTACT EMAIL]</span>.
+    <span class="fill">[FILL: response-time commitment, e.g. "within 30 days"]</span>
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    EVENTPEDIA is not intended for anyone under <strong>18</strong>, and we do
+    not knowingly collect data from them. Some listings are additionally
+    restricted to 20+ by the venue or by law; the venue's rules apply.
+  </p>
+
+  <h2>Changes</h2>
+  <p>
+    If we change this policy we will update the date at the top and, for
+    significant changes, tell you in the app.
+  </p>
+
+  <p class="foot">
+    Questions: <span class="fill">[FILL: CONTACT EMAIL]</span> ·
+    <a href="./terms.html">Terms of Service</a>
+  </p>
+</div>
+</body>
+</html>

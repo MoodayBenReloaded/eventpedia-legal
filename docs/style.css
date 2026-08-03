@@ -1,0 +1,169 @@
+/* EVENTPEDIA legal pages — the app's design language, no external requests.
+   System fonts only: GitHub Pages serving Clash Display/Satoshi would mean
+   either committing the licensed font files to a public repo or a CDN call
+   from a page whose whole subject is "we do not leak your requests". The
+   voice carries instead — void background, lime accent, mono meta, generous
+   measure. */
+
+:root {
+  --void: #09090b;
+  --onyx: #18181b;
+  --onyx2: #27272a;
+  --bone: #fafaf9;
+  --dim: #a1a1aa;
+  --dimmer: #71717a;
+  --lime: #d4ff3f;
+  --amber: #fbbf24;
+  --measure: 44rem;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--void);
+  color: var(--bone);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, "Noto Sans Thai", sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 6rem;
+}
+
+.brand {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  color: var(--bone);
+  text-decoration: none;
+  margin-bottom: 3rem;
+}
+.brand span { color: var(--lime); }
+
+h1 {
+  font-size: clamp(2.2rem, 7vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  margin: 3rem 0 0.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--onyx2);
+}
+
+p, ul, ol { margin: 0 0 1.1rem; }
+ul, ol { padding-left: 1.25rem; }
+li { margin-bottom: 0.4rem; }
+
+a { color: var(--lime); text-underline-offset: 3px; }
+
+strong { color: #fff; font-weight: 600; }
+
+code, .meta {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-size: 0.85em;
+}
+
+.meta {
+  color: var(--dimmer);
+  letter-spacing: 0.02em;
+  margin-bottom: 2.5rem;
+}
+
+.note {
+  color: var(--dim);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Every value that must be supplied before publishing. Deliberately loud —
+   these are the things that are wrong to invent, so they should be
+   impossible to miss on a skim. */
+.fill {
+  display: inline-block;
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px dashed var(--amber);
+  border-radius: 4px;
+  color: var(--amber);
+  padding: 0 0.4em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.callout {
+  background: var(--onyx);
+  border-left: 3px solid var(--lime);
+  border-radius: 0 8px 8px 0;
+  padding: 1.1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.callout p:last-child { margin-bottom: 0; }
+
+/* Wide content scrolls inside its own box; the page body never does. */
+.table-scroll, table { display: block; overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.5rem;
+  font-size: 0.9rem;
+  white-space: normal;
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.7rem 0.9rem 0.7rem 0;
+  border-bottom: 1px solid var(--onyx2);
+  min-width: 8rem;
+}
+th {
+  color: var(--lime);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-bottom-color: var(--onyx2);
+}
+td { color: var(--dim); }
+td:first-child { color: var(--bone); }
+
+.foot {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--onyx2);
+  color: var(--dimmer);
+  font-size: 0.9rem;
+}
+
+/* The pages commit to the dark brand look, but a light-preference reader on a
+   bright screen still gets a readable contrast ratio rather than a fight. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --void: #fafaf9;
+    --onyx: #f4f4f5;
+    --onyx2: #e4e4e7;
+    --bone: #18181b;
+    --dim: #52525b;
+    --dimmer: #71717a;
+    --lime: #4d7c0f;
+    --amber: #a16207;
+  }
+  :root:not([data-theme="dark"]) strong { color: #000; }
+}
