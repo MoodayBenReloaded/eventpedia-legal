@@ -35,12 +35,12 @@
   <h2 id="short">The short version</h2>
   <ul>
     <li>You can browse EVENTPEDIA <strong>without giving us your name, email or phone number</strong>. The app creates an anonymous account for you automatically.</li>
-    <li>If you create a profile, your <strong>username, display name, bio and link are public</strong>. So are the hosts and venues you follow, and any event you publish.</li>
+    <li>If you create a profile, your <strong>username, display name, bio and link are public</strong>. So are the hosts and venues you follow, and any event you publish once our team has approved it.</li>
     <li>Your <strong>saved events and your blocked list are private</strong>.</li>
     <li>Your <strong>location is used only to find events near you</strong>, and only if you allow it. We do not store it.</li>
-    <li>We use <strong>PostHog</strong> to understand how the app is used. It never receives your search text, your exact location or your profile text.</li>
+    <li>We use <strong>PostHog</strong> to understand how the app is used. It never receives your search text, your exact location or your profile text. You can turn this off in <strong>Settings → Share usage analytics</strong>.</li>
     <li>We do not sell your data, use advertising networks, show ads targeted using your data, or track you across other companies' apps. Events that businesses pay us to promote are labelled.</li>
-    <li><strong>Settings → Delete account</strong> removes your account and most of your data. Some things stay, such as events you published. Section 9 lists exactly what, and how to ask us to remove the rest.</li>
+    <li><strong>Settings → Delete account</strong> removes your account and most of your data, including every event you created and its cover image. A few things stay, such as reports you filed. Section 9 lists exactly what, and how to ask us to remove the rest.</li>
   </ul>
 
   <h2 id="who">1. Who is responsible for your data</h2>
@@ -88,9 +88,19 @@
     <strong>This information is public.</strong> The app does not currently
     show other people's profiles, but anyone, including people who do not use
     the app, can read it through our public data interface. Please do not put
-    anything in your profile that you would not want to be public. If you
+    anything in your profile that you would not want to be public. The app
+    does not save a username, display name, bio or link that contains
+    obviously offensive words. If you
     publish an event, your display name is also shown as its host name (see
     2.7). We do not ask for a profile photo.
+  </p>
+  <p>
+    When you create your profile, and before you publish an event if you have
+    not yet agreed to the current version, the app asks you to agree to the
+    Terms of Service and this Privacy Policy. We keep a record of when you
+    agreed and to which version, linked to your profile, as evidence of the
+    agreement. <strong>This record is not public:</strong> only your own
+    account and we can read it.
   </p>
 
   <h3>2.3 Saved events (private)</h3>
@@ -118,45 +128,67 @@
 
   <h3>2.6 Reports</h3>
   <p>
-    You can report an event from the bottom of its page. You choose one reason
-    from a fixed list (spam or fake event, wrong or misleading details,
-    offensive or harmful, impersonating someone, something else). There is no
-    free-text box. We store the reason, the event, the time and your account ID.
+    You can report an event from the bottom of its page, and a host (the name
+    on an event's host card, which is a user's profile when a user published
+    the event) from that card (<em>Report host</em>) or by pressing and holding
+    it in Profile → FOLLOWS → HOSTS. You choose one reason from a fixed list
+    (for an event: spam or fake event, wrong or misleading details, offensive
+    or harmful, impersonating someone, something else; for a host: spam or
+    fake host, posts misleading events, abusive or offensive, impersonating
+    someone, something else). There is no free-text box. We store the reason,
+    what you reported (the event or the host), the time and your account ID.
   </p>
   <p>
-    The host is not told who reported their event. Our moderators' review
-    screen shows how many reports an event has and the reasons, not who filed
-    them. Only people with administrative access to our database can see the
-    reporter's account ID. We keep it so we can handle reports properly, for
-    example to count one report per person. If you delete your account, your
-    account ID is removed from your reports and the rest of each report is kept.
+    The host is not told who reported their event or them. Our moderators'
+    review screen shows how many reports an event or host has and the
+    reasons, not who filed them; for a host that belongs to a user, it also
+    shows that user's username. Only people with administrative access to
+    our database can see the reporter's account ID. We keep it so we can
+    handle reports properly, for example to count one report per person. If
+    you delete your account, your account ID is removed from your reports and
+    the rest of each report is kept. If someone reports you as a host or
+    reports one of your events, we keep that report as a moderation record,
+    also after you delete your account.
   </p>
 
   <h3>2.7 Events you create</h3>
   <p>
     When you create an event, the app saves it to our server as a
     <strong>draft</strong> as soon as it has a title, and again shortly after
-    each change. An event contains what you enter: title, description,
-    category, venue, date and times, price, number of spots, tags, whether it
-    is a community event, and an optional cover image. It is linked to your
-    account ID.
+    each change (for a published event, when you tap <em>Save changes</em>).
+    An event contains what you enter: title, description, category, venue,
+    date and times, price, number of spots, tags, whether it is a community
+    event, and an optional cover image. It is linked to your account ID. The
+    app does not save event text that contains obviously offensive words.
   </p>
   <ul>
     <li><strong>Drafts</strong> are visible only to you. A cover image you add to a draft is the exception: it is a public file (see <em>Cover images</em> below).</li>
     <li>
-      <strong>Published events are public.</strong> Everyone can see them in
+      <strong>Events are reviewed before they are public.</strong> When you publish, the
+      event goes to our moderators and shows as <em>In review</em>; until they approve it,
+      only you and they can see it. If they do not approve it, it goes back to your drafts
+      with the reason. We store the review status, when you submitted the event, when and
+      by which moderator it was reviewed (kept where only our staff can see it), and the
+      reason if it was not approved.
+    </li>
+    <li>
+      <strong>Approved events are public.</strong> Everyone can see them in
       the app, and anyone with a shared link can see them on our event web
       page without the app. Your <strong>display name is shown as the host
-      name</strong>. Changes you make after publishing appear straight away.
-      The link between a published event and your account ID can be read
-      through our public data interface.
+      name</strong>. Changes to the date, time and other details appear
+      straight away; changes to the title, description, tags, price, venue or
+      cover image send the event back to review, and it is hidden until they
+      are approved. The link between a published event and your account ID
+      can be read through our public data interface.
     </li>
-    <li>When you publish, people who follow you as a host get a notification in the app with your host name and the event title.</li>
+    <li>When your event is approved, people who follow you as a host get a notification in the app with your host name and the event title.</li>
     <li>
       You can <strong>cancel</strong> a published event. It then disappears
-      from public view, but it is not deleted and you can publish it again.
-      The app does not let you delete events or drafts yourself. Email us and
-      we will delete them.
+      from public view, but it is not deleted and you can submit it for
+      review again.
+      The app does not let you delete a single event or draft yourself. Email
+      us and we will delete it. Deleting your account deletes all of them
+      (section 9).
     </li>
   </ul>
   <p>
@@ -164,19 +196,32 @@
     library. Before upload the app resizes it (1280 pixels wide) and saves it
     as a new JPEG file <strong>without the original photo's metadata</strong>,
     such as where and when it was taken or the camera model. The image is
-    uploaded as soon as you choose it, even for a draft. It is stored as a
-    <strong>public file that anyone can view</strong>, even while the event is
-    a draft or after it is cancelled, and the file's address contains your
-    account ID. The image stays online if you cancel the event or delete your
-    account, until we delete it at your request.
+    uploaded as soon as you choose it, even for a draft. Each new cover image
+    is saved as a new file, and the app deletes the file it replaces. It is
+    stored as a <strong>public file that anyone can view</strong>, even while
+    the event is a draft or in review, or after it is cancelled, and the
+    file's address contains your
+    account ID. The image stays online if you cancel the event. It is deleted
+    from our file storage when you delete your account (section 9), or
+    earlier if you ask us.
   </p>
 
   <h3>2.8 Venues you add</h3>
   <p>
     If you add a new venue while creating an event, we store its name, area and
-    address, linked to your account ID. Venues are part of a shared, public
-    list that every host can choose from, and the link to your account ID can
-    be read through our public data interface.
+    address, linked to your account ID. All venues are kept in one shared
+    list. The venue search in the app shows you only our own venues and the
+    ones you added, so other hosts do not see your venue there; another host
+    gets the same venue only by adding a new venue with exactly the same name
+    (capital letters and spaces before or after the name do not count). Once
+    an event that uses your venue is public, the venue's name, area and address are shown with
+    that event. The shared list, including the link between your venue and
+    your account ID, can be read through our public data interface. When you
+    delete your account,
+    a venue you added is deleted too, unless another event uses it or someone
+    follows it; then it stays in the shared list without the link to your
+    account. The app does not save a venue name, area or address that
+    contains obviously offensive words.
   </p>
 
   <h3>2.9 Notifications in the app</h3>
@@ -228,7 +273,7 @@
     many results it found.
   </p>
 
-  <h3>2.13 Analytics (PostHog)</h3>
+  <h3 id="analytics">2.13 Analytics (PostHog)</h3>
   <p>
     We use PostHog, hosted in the European Union, to understand how the app is
     used so we can fix problems and improve it. The app sends PostHog:
@@ -273,9 +318,17 @@
     about individual users.
   </p>
   <p>
-    The app has <strong>no in-app switch to turn analytics off</strong>. You
-    can object to analytics, or ask us to delete your analytics data, by
-    emailing <span class="fill">[FILL: CONTACT EMAIL]</span> (see section 11).
+    <strong>You can turn analytics off</strong> at any time in
+    <strong>Settings → Share usage analytics</strong>. It is on until you turn
+    it off. When you turn it off, the app stops sending data to PostHog from
+    that iPhone straight away and discards analytics events still waiting to
+    be sent. While it is off, the app does not connect to PostHog at all. You
+    can turn it back on in the same place. The choice is saved on your iPhone,
+    not in your account: it applies to whoever uses the app on that iPhone, it
+    stays when you sign out or delete your account, and you set it separately
+    on each device. Turning analytics off does not delete what PostHog has
+    already received. To have that deleted, or to object in any other way,
+    email <span class="fill">[FILL: CONTACT EMAIL]</span> (see section 11).
   </p>
 
   <h3>2.14 Technical logs</h3>
@@ -305,8 +358,8 @@
   <p>
     The app stores some things on your device: the key to your account (in
     the Keychain), your language choice (also saved to your profile if you
-    have one, see 2.2), and whether a one-time promotion has already been
-    shown. PostHog's software
+    have one, see 2.2), whether a one-time promotion has already been shown,
+    and your Share usage analytics choice (2.13). PostHog's software
     keeps its IDs and any analytics events waiting to be sent in the app's
     storage. Temporary files for share images, calendar files and cover
     uploads are kept in the app's cache.
@@ -373,19 +426,19 @@
         <td>Performing our contract when you add a cover image to your event (you control access through the iOS permission and can turn it off at any time)</td>
       </tr>
       <tr>
-        <td>Keeping the service safe: handling reports, moderating content, enforcing the Terms, preventing abuse, security</td>
-        <td>Reports, events, profiles, technical logs (2.6, 2.7, 2.14)</td>
+        <td>Keeping the service safe: reviewing events before they are published, refusing text with offensive words, handling reports, moderating content, enforcing the Terms, preventing abuse, security</td>
+        <td>Reports, events, profiles, your record of agreeing to the Terms, technical logs (2.2, 2.6, 2.7, 2.14)</td>
         <td>Our legitimate interests in a safe, trustworthy service, and performing our contract</td>
       </tr>
       <tr>
         <td>Understanding how the app is used, to fix and improve it, and measuring how often sponsored placements and our advertising banner are seen and tapped</td>
         <td>Analytics (2.13)</td>
-        <td>Our legitimate interests. You can object (section 11).</td>
+        <td>Our legitimate interests. You can turn analytics off in Settings (2.13) or object (section 11).</td>
       </tr>
       <tr>
-        <td>Keeping published events available to people who rely on them, and keeping a record of listings published or prepared on the service, to handle reports, disputes and legal claims. We remove these on request rather than automatically.</td>
-        <td>Published events, host names, venues, cover images, drafts and cancelled events kept after an account is deleted (2.7, 2.8, section 9)</td>
-        <td>Our legitimate interests. You can ask us to remove them (section 9).</td>
+        <td>Keeping a venue you added in the shared venue list after you delete your account, when other events use it or people follow it</td>
+        <td>Venues you added (2.8, section 9)</td>
+        <td>Our legitimate interests in a usable shared venue list. You can ask us to remove them (section 9).</td>
       </tr>
       <tr>
         <td>Publishing event listings gathered from public sources</td>
@@ -415,7 +468,7 @@
     the technical data in 2.13 and 2.14 come with using the app at all. You
     can browse, search, filter, view the map, open events, share them and add
     them to your calendar without a profile. You need a profile to save
-    events, follow hosts and venues, report events, block someone and create
+    events, follow hosts and venues, report events and hosts, block someone and create
     events; without one, those features are not available. Location and photo
     access are optional: without location the app centres on Bangkok, and you
     can publish an event without a cover image.
@@ -461,7 +514,7 @@
     </li>
     <li>
       <strong>Our moderators and staff</strong> can access data when needed to
-      run the service, review reports or answer your requests.
+      run the service, review events and reports or answer your requests.
     </li>
     <li>
       <strong>Authorities</strong>, such as courts or police, when the law
@@ -498,16 +551,16 @@
         <td>Until you delete your account. We do not currently delete inactive accounts automatically. The sign-in system's audit log, which records IP addresses, is not removed when you delete your account and is not deleted automatically: we keep it while we need it for security, delete it when we no longer need it, and delete the entries about your account if you ask.</td>
       </tr>
       <tr>
-        <td>Profile, saved events, follows, blocks, in-app notifications</td>
+        <td>Profile, your record of agreeing to the Terms, saved events, follows, blocks, in-app notifications</td>
         <td>Until you delete your account. Saved events, follows and blocks also end when you remove them in the app.</td>
       </tr>
       <tr>
-        <td>Drafts and cancelled events</td>
-        <td>Until we delete them at your request. They stay in our database, visible to no one, after you delete your account.</td>
+        <td>Events you create (drafts, events in review or not approved, published and cancelled events), your host name and cover images</td>
+        <td>Until you delete your account, or earlier if we delete them at your request. Copies of cover images in our hosting provider's network cache can stay reachable for up to an hour after deletion.</td>
       </tr>
       <tr>
-        <td>Published events, host names, cover images, venues you add</td>
-        <td>As long as they are part of the public listings, including after you delete your account, until you or a moderator removes them or you ask us to delete them</td>
+        <td>Venues you add</td>
+        <td>Until you delete your account. A venue that another event uses or someone follows then stays in the shared list, without the link to your account, until a moderator removes it or you ask us to delete it.</td>
       </tr>
       <tr>
         <td>Reports</td>
@@ -546,11 +599,16 @@
   </p>
   <p><strong>What is deleted:</strong></p>
   <ul>
-    <li>your profile: username, display name, bio, link and language;</li>
+    <li>your profile: username, display name, bio, link and language, and your record of agreeing to the Terms;</li>
     <li>your saved events;</li>
     <li>everything you follow, and any follows of your profile;</li>
     <li>your blocked list, and any blocks of you;</li>
     <li>your in-app notifications;</li>
+    <li>every event you created, whether it is a draft, in review, not approved, published or cancelled. It disappears for everyone, together with other people's saves of it and the in-app notifications about it;</li>
+    <li>the cover images you uploaded, deleted from our file storage;</li>
+    <li>your host name: the host record created when you first submitted an event for review, and everyone's follows of it;</li>
+    <li>venues you added that no other event uses and nobody follows;</li>
+    <li>notifications in other people's lists that name you, for example that you are going to an event;</li>
     <li>
       your anonymous account and its active sign-in sessions. If the empty
       sign-in record cannot be removed automatically, the app tells you.
@@ -561,22 +619,18 @@
   <div class="callout">
     <p><strong>What stays after deletion:</strong></p>
     <ul>
-      <li><strong>Events you published</strong> stay public, with your display name as the host name. They are no longer linked to your account.</li>
-      <li>Your <strong>host name</strong> stays on your host record, and people who followed you as a host keep following it.</li>
-      <li><strong>Cover images</strong> you uploaded stay online as public files. Their web address still contains your former account ID.</li>
-      <li><strong>Drafts and cancelled events</strong> stay in our database. No one can see them.</li>
-      <li><strong>Venues you added</strong> stay in the shared venue list.</li>
-      <li><strong>Reports you filed</strong> stay, without your account ID.</li>
-      <li>Notifications already in other people's lists that show your host name and event title.</li>
+      <li><strong>Venues you added</strong> that another event uses or someone follows stay in the shared venue list, without the link to your account.</li>
+      <li>Copies of your cover images in our hosting provider's network cache can stay reachable at their old web address for up to an hour.</li>
+      <li><strong>Reports you filed</strong> stay, without your account ID. Reports other people filed about your events, your host name or your profile also stay, as a moderation record (section 8).</li>
       <li>Your <strong>analytics history at PostHog</strong>, linked to your former account ID.</li>
-      <li>The <strong>random installation ID</strong> that PostHog's software created when you first opened the app. It stays in the app's storage and is still sent to PostHog until you uninstall the app, so PostHog can connect your new anonymous account with your earlier analytics history.</li>
+      <li>The <strong>random installation ID</strong> that PostHog's software created when you first opened the app. It stays in the app's storage and is still sent to PostHog until you uninstall the app or turn off Share usage analytics (2.13), so PostHog can connect your new anonymous account with your earlier analytics history.</li>
       <li>Emails you sent us; entries about your account in the audit log of our hosting provider's sign-in system, which records IP addresses (see section 8); and technical logs until they expire.</li>
     </ul>
     <p>
       If you want any of this removed, email
-      <span class="fill">[FILL: CONTACT EMAIL]</span>. Tell us your username
-      and the events concerned, ideally before you delete your account, so we
-      can find them. We will reply within 30 days.
+      <span class="fill">[FILL: CONTACT EMAIL]</span>. Tell us your username,
+      ideally before you delete your account, so we can find your data. We
+      will reply within 30 days.
     </p>
   </div>
 
@@ -608,8 +662,9 @@
   </ul>
   <p>
     You can do some of this yourself in the app: edit your profile in
-    Settings → Edit profile, remove saves and follows, and delete your account
-    in Settings → Delete account. You can turn off location or photo access
+    Settings → Edit profile, remove saves and follows, turn analytics off in
+    Settings → Share usage analytics, and delete your account in Settings →
+    Delete account. You can turn off location or photo access
     at any time in iOS Settings → Eventpedia.
   </p>
   <p>
@@ -619,9 +674,11 @@
     If the law allows us to refuse a request, we will tell you why.
   </p>
   <p>
-    The app has no switch to turn analytics off. If you object to analytics,
-    we will delete the analytics data linked to your account ID and tell you
-    how we will handle future analytics data about you.
+    Turning off <strong>Share usage analytics</strong> (2.13) is how you object
+    to analytics from the app itself. It stops analytics from that iPhone from
+    then on. You can also object by email. If you want the analytics data we
+    already hold deleted, email us and we will delete the analytics data linked
+    to your account ID.
   </p>
 
   <h2 id="children">12. Children</h2>
