@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<!-- noindex while [FILL] placeholders remain: an unfinished legal page
+<!-- noindex until the placeholders are filled: an unfinished legal page
      that search engines have cached is worse than one nobody can find.
-     Remove this line once every placeholder is filled. -->
+     Remove this comment and the meta line then. -->
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Privacy Policy · EVENTPEDIA</title>
-<meta name="description" content="What EVENTPEDIA collects, why, and how to delete it.">
+<meta name="description" content="What EVENTPEDIA collects, why, who receives it, how long it is kept, and how to delete it.">
 <link rel="stylesheet" href="./style.css">
+<link rel="alternate" hreflang="th" href="./privacy-th.html">
 </head>
 <body>
 <div class="wrap">
@@ -17,219 +18,651 @@
 
   <h1>Privacy Policy</h1>
   <p class="meta">
-    Last updated: <span class="fill">[FILL: DATE]</span> ·
-    Applies to the EVENTPEDIA mobile app and <code>eventpedia.app</code>
+    Effective date: <span class="fill">[FILL: EFFECTIVE DATE]</span> ·
+    Applies to the EVENTPEDIA iPhone app and these web pages ·
+    <a href="./privacy-th.html" hreflang="th" lang="th">ภาษาไทย</a>
   </p>
 
-  <div class="callout">
-    <strong>Before publishing.</strong> Every <span class="fill">[FILL: …]</span>
-    below needs a real value, and this document should be reviewed by a Thai
-    lawyer familiar with the <abbr title="Personal Data Protection Act B.E. 2562">PDPA</abbr>.
-    It describes what the software actually does today — it is an accurate
-    engineering account, not legal advice, and it is not a substitute for review.
-  </div>
-
-  <h2>Who we are</h2>
   <p>
-    EVENTPEDIA is operated by <span class="fill">[FILL: LEGAL ENTITY NAME]</span>,
-    registered at <span class="fill">[FILL: REGISTERED ADDRESS]</span>
-    <span class="fill">[FILL: COMPANY REGISTRATION NUMBER, if applicable]</span>.
-    For anything in this policy, contact
-    <span class="fill">[FILL: CONTACT EMAIL]</span>.
-  </p>
-  <p class="note">
-    Under the PDPA you may also need to name a Data Controller and, depending on
-    scale, a Data Protection Officer:
-    <span class="fill">[FILL: DPO NAME + CONTACT, or confirm not required]</span>.
+    This policy explains what personal data EVENTPEDIA collects, how and why we
+    use it, who receives it, how long we keep it, and what you can do about it.
+    It is written to meet the Thai Personal Data Protection Act B.E. 2562
+    (<abbr title="Personal Data Protection Act">PDPA</abbr>) and Apple's App Store rules.
+    This policy is also available in <a href="./privacy-th.html" hreflang="th">Thai</a>.
+    If the two versions differ, the English version applies.
   </p>
 
-  <h2>The short version</h2>
+  <h2 id="short">The short version</h2>
   <ul>
-    <li>You can browse the entire app <strong>without giving us your name or email</strong>.</li>
-    <li>Our analytics never receive your email, username, or display name — only a random id.</li>
-    <li>Your location is used to sort events by distance. We do not store it.</li>
-    <li>You can delete your account and personal data from inside the app.</li>
+    <li>You can browse EVENTPEDIA <strong>without giving us your name, email or phone number</strong>. The app creates an anonymous account for you automatically.</li>
+    <li>If you create a profile, your <strong>username, display name, bio and link are public</strong>. So are the hosts and venues you follow, and any event you publish.</li>
+    <li>Your <strong>saved events and your blocked list are private</strong>.</li>
+    <li>Your <strong>location is used only to find events near you</strong>, and only if you allow it. We do not store it.</li>
+    <li>We use <strong>PostHog</strong> to understand how the app is used. It never receives your search text, your exact location or your profile text.</li>
+    <li>We do not sell your data, use advertising networks, show ads targeted using your data, or track you across other companies' apps. Events that businesses pay us to promote are labelled.</li>
+    <li><strong>Settings → Delete account</strong> removes your account and most of your data. Some things stay, such as events you published. Section 9 lists exactly what, and how to ask us to remove the rest.</li>
   </ul>
 
-  <h2>Accounts</h2>
+  <h2 id="who">1. Who is responsible for your data</h2>
   <p>
-    On first launch the app creates an <strong>anonymous account</strong> so you
-    can browse and save events immediately. It is tied to your device, stored in
-    the device keychain, and contains no personal information.
+    EVENTPEDIA is operated by <span class="fill">[FILL: COMPANY NAME]</span>
+    ("we", "us"), registered at <span class="fill">[FILL: REGISTERED ADDRESS]</span>.
+    We are the data controller for the personal data described in this policy.
   </p>
   <p>
-    If you create a profile we store the <strong>username</strong> and
-    <strong>display name</strong> you choose, and optionally a
-    <strong>short bio</strong>, a <strong>link</strong>, a
-    <strong>profile picture</strong>, and your <strong>language preference</strong>.
-    Adding an <strong>email address</strong> is optional; its only purpose is to
-    let you recover your account on another device. We verify it with a one-time
-    code. We do not send marketing email.
+    Contact us at <span class="fill">[FILL: CONTACT EMAIL]</span>, or through
+    <em>Contact us</em> in the app's Settings. For data protection questions
+    and requests you can also contact our data protection contact (and our
+    representative in Thailand, if we are established outside Thailand):
+    <span class="fill">[FILL: DATA PROTECTION CONTACT]</span>.
   </p>
 
-  <h2>What we collect, and why</h2>
+  <h2 id="collect">2. What we collect and how</h2>
+
+  <h3>2.1 Your anonymous account (automatic)</h3>
+  <p>
+    When you first open the app, it creates an <strong>anonymous account</strong>
+    on our server automatically, before you do anything. The account has a
+    random <strong>account ID</strong>. It has no name, email address, phone
+    number or password. The app keeps the key to this account in your iPhone's
+    Keychain so you stay signed in. Our hosting provider's sign-in system also
+    keeps technical records for the account, such as when it was created and
+    last used, and the IP address and device type of its sign-in sessions.
+  </p>
+  <p>
+    The app creates a new anonymous account again after you delete your account.
+  </p>
+
+  <h3>2.2 Your profile (optional, public)</h3>
+  <p>
+    You only need a profile to save events, follow hosts and venues, report or
+    block, and create events. A profile contains:
+  </p>
+  <ul>
+    <li>a <strong>username</strong> and a <strong>display name</strong> (required);</li>
+    <li>a short <strong>bio</strong> and a <strong>link</strong> (optional);</li>
+    <li>your <strong>app language</strong> (English or Thai). It starts as English and changes if you switch the language in Settings;</li>
+    <li>when the profile was created and last changed.</li>
+  </ul>
+  <p>
+    <strong>This information is public.</strong> The app does not currently
+    show other people's profiles, but anyone, including people who do not use
+    the app, can read it through our public data interface. Please do not put
+    anything in your profile that you would not want to be public. If you
+    publish an event, your display name is also shown as its host name (see
+    2.7). We do not ask for a profile photo.
+  </p>
+
+  <h3>2.3 Saved events (private)</h3>
+  <p>
+    When you save an event we store which event you saved and when. Only you
+    can see your saved events.
+  </p>
+
+  <h3>2.4 Follows (public)</h3>
+  <p>
+    You can follow hosts and venues from an event's page. We store who you
+    follow and when. <strong>Follows are public:</strong> anyone can read
+    which account ID follows which host or venue through our public data
+    interface, and the app shows follower counts. When a host you follow
+    publishes an event, you get a notification in the app (see 2.9).
+  </p>
+
+  <h3>2.5 Blocks (private)</h3>
+  <p>
+    If you block someone we store who you blocked and when. Only you can see
+    your blocked list (Settings → Blocked accounts). We do not tell the other
+    person, but they may notice that they can no longer see your profile.
+    The <a href="./terms.html#blocking">Terms</a> explain exactly what blocking does.
+  </p>
+
+  <h3>2.6 Reports</h3>
+  <p>
+    You can report an event from the bottom of its page. You choose one reason
+    from a fixed list (spam or fake event, wrong or misleading details,
+    offensive or harmful, impersonating someone, something else). There is no
+    free-text box. We store the reason, the event, the time and your account ID.
+  </p>
+  <p>
+    The host is not told who reported their event. Our moderators' review
+    screen shows how many reports an event has and the reasons, not who filed
+    them. Only people with administrative access to our database can see the
+    reporter's account ID. We keep it so we can handle reports properly, for
+    example to count one report per person. If you delete your account, your
+    account ID is removed from your reports and the rest of each report is kept.
+  </p>
+
+  <h3>2.7 Events you create</h3>
+  <p>
+    When you create an event, the app saves it to our server as a
+    <strong>draft</strong> as soon as it has a title, and again shortly after
+    each change. An event contains what you enter: title, description,
+    category, venue, date and times, price, number of spots, tags, whether it
+    is a community event, and an optional cover image. It is linked to your
+    account ID.
+  </p>
+  <ul>
+    <li><strong>Drafts</strong> are visible only to you. A cover image you add to a draft is the exception: it is a public file (see <em>Cover images</em> below).</li>
+    <li>
+      <strong>Published events are public.</strong> Everyone can see them in
+      the app, and anyone with a shared link can see them on our event web
+      page without the app. Your <strong>display name is shown as the host
+      name</strong>. Changes you make after publishing appear straight away.
+      The link between a published event and your account ID can be read
+      through our public data interface.
+    </li>
+    <li>When you publish, people who follow you as a host get a notification in the app with your host name and the event title.</li>
+    <li>
+      You can <strong>cancel</strong> a published event. It then disappears
+      from public view, but it is not deleted and you can publish it again.
+      The app does not let you delete events or drafts yourself. Email us and
+      we will delete them.
+    </li>
+  </ul>
+  <p>
+    <strong>Cover images.</strong> You pick a cover image from your photo
+    library. Before upload the app resizes it (1280 pixels wide) and saves it
+    as a new JPEG file <strong>without the original photo's metadata</strong>,
+    such as where and when it was taken or the camera model. The image is
+    uploaded as soon as you choose it, even for a draft. It is stored as a
+    <strong>public file that anyone can view</strong>, even while the event is
+    a draft or after it is cancelled, and the file's address contains your
+    account ID. The image stays online if you cancel the event or delete your
+    account, until we delete it at your request.
+  </p>
+
+  <h3>2.8 Venues you add</h3>
+  <p>
+    If you add a new venue while creating an event, we store its name, area and
+    address, linked to your account ID. Venues are part of a shared, public
+    list that every host can choose from, and the link to your account ID can
+    be read through our public data interface.
+  </p>
+
+  <h3>2.9 Notifications in the app</h3>
+  <p>
+    When a host you follow publishes an event, our server adds a notification
+    to the list behind the bell icon in the app. It contains the host name, the
+    event title and links to them. Only you can see your notifications. We
+    store whether you have read them.
+  </p>
+
+  <h3>2.10 Location (only with your permission)</h3>
+  <p>
+    The app asks for your location <strong>only when you tap
+    <em>Current location</em></strong> in the event filters, and only while
+    you are using the app. It never uses your location in the background. If
+    you say no, everything stays centred on Bangkok and keeps working.
+  </p>
+  <p>If you allow it, your device's position is sent to our server:</p>
+  <ul>
+    <li>when you use <em>Current location</em>, and</li>
+    <li>when you open the map later. The map then centres on your position and looks for events around it.</li>
+  </ul>
+  <p>
+    We use the position <strong>only to find events near you</strong>. We
+    <strong>do not save it in our database</strong>, we do not keep a location
+    history, and we <strong>never send it to our analytics provider</strong>.
+    Analytics only records whether you chose Bangkok, your current location or
+    a point on the map, not where you are. When you move the map or use
+    <em>Choose on map</em>, the app sends that point instead of your position.
+    The blue dot showing your position on the map is drawn by iOS on your
+    device. You can turn location off at any time in iOS Settings → Eventpedia.
+  </p>
+
+  <h3>2.11 Photos (only the ones you pick)</h3>
+  <p>
+    The app asks for access to your photo library only when you tap to add a
+    cover image to an event. Only the photo you pick is uploaded, processed as
+    described in 2.7. The app does not use your camera. You can change photo
+    access at any time in iOS Settings → Eventpedia.
+  </p>
+
+  <h3>2.12 Searches</h3>
+  <p>
+    When you search for events or venues, the text you type is sent to our
+    server to run the search. We do not save searches in our database. Because
+    the search text is part of the request address, it may appear in our
+    hosting provider's short-lived technical logs (see 2.14). It is never
+    sent to analytics: analytics records only how long the search was and how
+    many results it found.
+  </p>
+
+  <h3>2.13 Analytics (PostHog)</h3>
+  <p>
+    We use PostHog, hosted in the European Union, to understand how the app is
+    used so we can fix problems and improve it. The app sends PostHog:
+  </p>
+  <ul>
+    <li>
+      <strong>events about how you use the app</strong>, such as opening it,
+      screens viewed, events viewed, saved or shared (with the event's ID),
+      filters and categories chosen, searches (length and number of results
+      only), whether you followed or blocked (not who), creating, publishing or
+      cancelling an event, which profile fields you changed (not what you
+      wrote), and views and taps of sponsored placements and of our own advertising banner;
+    </li>
+    <li>
+      <strong>an identifier</strong>: before you have a profile, a random ID
+      created by the app; once you create a profile, your account ID. PostHog
+      then joins your earlier activity to your account ID. The app also sends a
+      random ID for the app installation;
+    </li>
+    <li>
+      <strong>device information</strong>: device model (for example
+      "iPhone 16"), iOS version, app version and build, language, time zone and
+      screen size;
+    </li>
+    <li>
+      <strong>your IP address</strong>, because the app connects to PostHog
+      directly. PostHog may use it to work out an approximate location, such as
+      your country or city.
+    </li>
+  </ul>
+  <p>
+    PostHog <strong>never receives</strong> your search text, your exact
+    location, your username, display name, bio or link, or the text of events
+    you create. The app does not record your screen, does not send crash
+    reports, and does not send an event when you report something or tap a
+    ticket link.
+  </p>
+  <p>
+    We use analytics to count how often sponsored placements and our own
+    advertising banner are seen and tapped, so we can measure and price them.
+    We do not use analytics to target ads, and we do not give advertisers data
+    about individual users.
+  </p>
+  <p>
+    The app has <strong>no in-app switch to turn analytics off</strong>. You
+    can object to analytics, or ask us to delete your analytics data, by
+    emailing <span class="fill">[FILL: CONTACT EMAIL]</span> (see section 11).
+  </p>
+
+  <h3>2.14 Technical logs</h3>
+  <p>
+    When the app connects to our hosting provider (Supabase) or to PostHog,
+    their systems record technical details of each request, such as your IP
+    address, the device or app type (user agent), the time and the address of
+    the request. Our event web page creates the same kind of logs for anyone
+    who opens a shared link. Supabase keeps these logs for no more than 7
+    days, for security and to keep the service running. At PostHog, the same
+    technical details arrive with the analytics data and are kept with it: our
+    PostHog plan lets us use that data for 1 year (free plan) or 7 years (paid
+    plans), and it may stay stored at PostHog after that period (see 2.13 and
+    section 8).
+  </p>
+
+  <h3>2.15 Emails you send us</h3>
+  <p>
+    <em>Contact us</em> in Settings opens a draft in your own mail app. The
+    draft includes the app version and build, your iOS version and the app
+    language, and you can edit or delete anything before sending. If you send
+    it, or any other email to us, we receive your email address, the name on
+    your email account and whatever you write.
+  </p>
+
+  <h3>2.16 Data on your iPhone, links and sharing</h3>
+  <p>
+    The app stores some things on your device: the key to your account (in
+    the Keychain), your language choice (also saved to your profile if you
+    have one, see 2.2), and whether a one-time promotion has already been
+    shown. PostHog's software
+    keeps its IDs and any analytics events waiting to be sent in the app's
+    storage. Temporary files for share images, calendar files and cover
+    uploads are kept in the app's cache.
+  </p>
+  <p>
+    Opening links: <em>Get Tickets</em>, <em>View source</em>, map directions
+    and profile links open in your browser or in the relevant app, and that
+    website's or app's own privacy policy applies. When you share an event, the
+    link contains the event and the language, not who you are. <em>Add to
+    calendar</em> creates a calendar file on your device; the app never reads
+    your calendar. Some event images may load directly from the organiser's or
+    source website, which then sees your IP address but not your account.
+  </p>
+
+  <h3 id="public-sources">2.17 Event listings from public sources</h3>
+  <p>
+    We gather listings from public sources such as event calendars, venue
+    and organiser websites and their public social media pages; our team also
+    compiles listings by hand, and some come from partners. A listing can
+    include the organiser's or host's name and the venue's details, and we
+    keep a copy of the source data and a link to it. Our team reviews each of
+    these listings before it is published, and published
+    listings are public. Organisers and others named in a listing can ask us
+    to correct or remove it by emailing
+    <span class="fill">[FILL: CONTACT EMAIL]</span>.
+  </p>
+
+  <h2 id="not-collected">3. What we do not collect</h2>
+  <ul>
+    <li>No sign-in with email or phone number, and no passwords.</li>
+    <li>No contacts, calendar, camera, microphone or clipboard contents.</li>
+    <li>No profile photos.</li>
+    <li>No push notification tokens. The app does not ask for notification permission.</li>
+    <li>No advertising identifier (IDFA). The app does not ask to track you, and we do not track you across other companies' apps or websites.</li>
+    <li>No private messages: the app has no chat or comments.</li>
+    <li>No payment details: there are no purchases in the app.</li>
+  </ul>
+  <p>
+    <strong>We do not sell your personal data</strong>, and we do not share it
+    with advertisers or data brokers.
+  </p>
+
+  <h2 id="purposes">4. Why we use your data, and our legal bases</h2>
+  <p>
+    The PDPA only allows us to use personal data on a legal basis. These are
+    the purposes and the bases we rely on:
+  </p>
   <table>
-    <thead><tr><th>Data</th><th>Why</th><th>When</th></tr></thead>
+    <thead><tr><th>Purpose</th><th>Data</th><th>Legal basis</th></tr></thead>
     <tbody>
       <tr>
-        <td>Anonymous account id</td>
-        <td>So saved events and follows persist</td>
-        <td>First launch, automatically</td>
+        <td>Running the app for you: your account, profile, saved events, follows, blocks, notifications, events and venues you create, searches</td>
+        <td>Sections 2.1 to 2.9, 2.12</td>
+        <td>Performing our contract with you (the <a href="./terms.html">Terms</a>)</td>
       </tr>
       <tr>
-        <td>Username, display name, bio, link, avatar, language</td>
-        <td>Your public profile</td>
-        <td>Only if you create a profile</td>
+        <td>Finding events near you</td>
+        <td>Device location (2.10)</td>
+        <td>Performing our contract when you ask for nearby events (you control access through the iOS permission and can turn it off at any time)</td>
       </tr>
       <tr>
-        <td>Email address</td>
-        <td>Account recovery</td>
-        <td>Only if you choose to add one</td>
+        <td>Adding a cover image to your event</td>
+        <td>The photo you pick (2.11)</td>
+        <td>Performing our contract when you add a cover image to your event (you control access through the iOS permission and can turn it off at any time)</td>
       </tr>
       <tr>
-        <td>Saved / going events, follows, blocked accounts</td>
-        <td>The core features</td>
-        <td>When you use them</td>
+        <td>Keeping the service safe: handling reports, moderating content, enforcing the Terms, preventing abuse, security</td>
+        <td>Reports, events, profiles, technical logs (2.6, 2.7, 2.14)</td>
+        <td>Our legitimate interests in a safe, trustworthy service, and performing our contract</td>
       </tr>
       <tr>
-        <td>Events you publish, and images you upload for them</td>
-        <td>To show them in the public catalogue</td>
-        <td>Only if you host an event</td>
+        <td>Understanding how the app is used, to fix and improve it, and measuring how often sponsored placements and our advertising banner are seen and tapped</td>
+        <td>Analytics (2.13)</td>
+        <td>Our legitimate interests. You can object (section 11).</td>
       </tr>
       <tr>
-        <td>Push notification token</td>
-        <td>To deliver notifications you enabled</td>
-        <td>Only after you grant permission</td>
+        <td>Keeping published events available to people who rely on them, and keeping a record of listings published or prepared on the service, to handle reports, disputes and legal claims. We remove these on request rather than automatically.</td>
+        <td>Published events, host names, venues, cover images, drafts and cancelled events kept after an account is deleted (2.7, 2.8, section 9)</td>
+        <td>Our legitimate interests. You can ask us to remove them (section 9).</td>
       </tr>
       <tr>
-        <td>Approximate location (coordinates)</td>
-        <td>To rank events by distance</td>
-        <td>Only while you use the map, and only if you allow it</td>
+        <td>Publishing event listings gathered from public sources</td>
+        <td>Organiser and host names, venue details, source data and links (2.17)</td>
+        <td>Our legitimate interests in an accurate public event directory. You can object or ask us to correct or remove a listing (section 11).</td>
       </tr>
       <tr>
-        <td>Product analytics events</td>
-        <td>To understand which features are used</td>
-        <td>Continuously, tied to a random id</td>
+        <td>Answering your emails and requests</td>
+        <td>Emails (2.15)</td>
+        <td>Performing our contract, and our legitimate interests</td>
+      </tr>
+      <tr>
+        <td>Meeting legal obligations and answering lawful requests from authorities</td>
+        <td>Any of the above, as required</td>
+        <td>Legal obligation</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    We do not ask for sensitive data such as health, religion or political
+    views. Please do not include it in your profile or events.
+  </p>
+
+  <h2 id="required">5. Do you have to give us this data?</h2>
+  <p>
+    No law requires you to give us personal data. The anonymous account and
+    the technical data in 2.13 and 2.14 come with using the app at all. You
+    can browse, search, filter, view the map, open events, share them and add
+    them to your calendar without a profile. You need a profile to save
+    events, follow hosts and venues, report events, block someone and create
+    events; without one, those features are not available. Location and photo
+    access are optional: without location the app centres on Bangkok, and you
+    can publish an event without a cover image.
+  </p>
+
+  <h2 id="recipients">6. Who receives your data</h2>
+  <ul>
+    <li>
+      <strong>Supabase</strong> hosts our database, sign-in system and file
+      storage on servers in Singapore. Our event web page and public files,
+      such as cover images, are delivered through Supabase's global network,
+      so a request can be handled at the Supabase location nearest to the
+      person who opens it. Supabase processes data on our behalf.
+    </li>
+    <li>
+      <strong>PostHog</strong> provides our analytics, on servers in the
+      European Union (Germany). It processes data on our behalf.
+    </li>
+    <li>
+      Supabase and PostHog process personal data only on our instructions,
+      under data processing agreements that require them to keep it
+      confidential and secure. We share data with them only for the purposes
+      in this policy, and we make sure it gets the same protection with them
+      as this policy describes.
+    </li>
+    <li>
+      <strong>Apple</strong> provides the maps in the app (Apple Maps), so
+      your device requests map images from Apple. Apple also distributes the
+      app through the App Store. Apple handles this data under its own privacy
+      policy.
+    </li>
+    <li>
+      <strong>GitHub</strong> hosts these web pages, including this policy
+      and the Terms (GitHub Pages). When you open them, GitHub receives your
+      IP address and browser details and handles them under its own privacy
+      policy.
+    </li>
+    <li>
+      <strong>Other users and the public</strong> can see your public data:
+      your profile, your follows, events you publish with your host name and
+      cover images, and venues you add. Everyone can also see the event
+      listings we gather from public sources (2.17).
+    </li>
+    <li>
+      <strong>Our moderators and staff</strong> can access data when needed to
+      run the service, review reports or answer your requests.
+    </li>
+    <li>
+      <strong>Authorities</strong>, such as courts or police, when the law
+      requires us to disclose data.
+    </li>
+  </ul>
+
+  <h2 id="transfers">7. Transfers outside Thailand</h2>
+  <p>Supabase and PostHog store and process data outside Thailand:</p>
+  <ul>
+    <li>
+      <strong>Supabase (Singapore).</strong> The event web page and public
+      files, such as cover images, may be served from the Supabase location
+      nearest to you. Transferring data to Supabase is necessary to
+      provide the service you ask for under our contract with you (the
+      <a href="./terms.html">Terms</a>), an exception the PDPA allows
+      (section 28). Supabase also processes the data under its data
+      processing agreement, which includes standard contractual clauses.
+    </li>
+    <li>
+      <strong>PostHog (European Union, Germany).</strong> PostHog processes
+      analytics data under its data processing agreement, which includes
+      standard contractual clauses.
+    </li>
+  </ul>
+  <p>You can ask us for more information about these safeguards.</p>
+
+  <h2 id="retention">8. How long we keep data</h2>
+  <table>
+    <thead><tr><th>Data</th><th>How long</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Anonymous account and its sign-in records</td>
+        <td>Until you delete your account. We do not currently delete inactive accounts automatically. The sign-in system's audit log, which records IP addresses, is not removed when you delete your account and is not deleted automatically: we keep it while we need it for security, delete it when we no longer need it, and delete the entries about your account if you ask.</td>
+      </tr>
+      <tr>
+        <td>Profile, saved events, follows, blocks, in-app notifications</td>
+        <td>Until you delete your account. Saved events, follows and blocks also end when you remove them in the app.</td>
+      </tr>
+      <tr>
+        <td>Drafts and cancelled events</td>
+        <td>Until we delete them at your request. They stay in our database, visible to no one, after you delete your account.</td>
+      </tr>
+      <tr>
+        <td>Published events, host names, cover images, venues you add</td>
+        <td>As long as they are part of the public listings, including after you delete your account, until you or a moderator removes them or you ask us to delete them</td>
+      </tr>
+      <tr>
+        <td>Reports</td>
+        <td>Up to 3 years after the report is closed or, if it is never reviewed, after it was filed, as a moderation record. Your account ID is removed if you delete your account.</td>
+      </tr>
+      <tr>
+        <td>Analytics (PostHog)</td>
+        <td>Our PostHog plan lets us use analytics events for 1 year (PostHog's free plan) or 7 years (its paid plans). PostHog does not offer a shorter period and does not say that it deletes older events, so they may stay stored at PostHog after that period. Deleting your account does not delete this data. If you ask us by email, we will delete the analytics data linked to your account.</td>
+      </tr>
+      <tr>
+        <td>Technical logs</td>
+        <td>At Supabase, no more than 7 days. At PostHog, kept with the analytics data (see the Analytics row).</td>
+      </tr>
+      <tr>
+        <td>Emails you send us</td>
+        <td>Up to 3 years after your request is resolved, to keep a record of it</td>
+      </tr>
+      <tr>
+        <td>Event listings from public sources, and our copy of the source data (2.17)</td>
+        <td>Listings stay as long as they are published. Our copy of the source data stays until we delete it, and we will delete it on request; we do not currently delete it automatically.</td>
+      </tr>
+      <tr>
+        <td>Location and search text</td>
+        <td>Not saved in our database. Used only for the request. Search text may appear in Supabase's technical logs, which are kept for no more than 7 days.</td>
       </tr>
     </tbody>
   </table>
 
-  <h2>Location</h2>
+  <h2 id="delete">9. Deleting your account</h2>
   <p>
-    Location is <strong>optional</strong>. The app asks only when you open the
-    map view. If you decline, the map simply centres on Bangkok and everything
-    else keeps working.
+    Open <strong>Settings</strong> (the gear icon on the Profile tab; if the
+    Create profile screen opens, tap <em>Not now</em> first) and tap
+    <strong>Delete account</strong>. If you have a profile, you type your
+    username to confirm. Deletion happens straight away and cannot be undone.
+    The app then starts a new, empty anonymous account.
   </p>
-  <p>
-    If you allow it, your coordinates are sent to our backend
-    <strong>to run the distance query and are not written to our database</strong>.
-    We do not keep a location history, and we do not track you in the background —
-    the app requests foreground location only.
-  </p>
-
-  <h2>Analytics</h2>
-  <p>
-    We use <strong>PostHog</strong> (EU-hosted, <code>eu.i.posthog.com</code>) to
-    measure product usage: screens opened, events viewed and saved, searches,
-    filters, shares, and notification permission outcomes.
-  </p>
-  <p>
-    Analytics are identified by a <strong>random id only</strong>. We never send
-    your email address, username, or display name to PostHog. Before you create a
-    profile, events carry a device-generated anonymous id; afterwards they carry
-    your account id. Signing out returns you to a fresh anonymous id.
-  </p>
-  <p class="note">
-    Analytics are switched off entirely in our development builds, so our own
-    testing never enters the data.
-  </p>
-
-  <h2>Push notifications</h2>
-  <p>
-    If you enable notifications we store a <strong>push token</strong> for your
-    device so we can deliver them. Tokens are sent to Expo's push service, which
-    passes them to Apple or Google for delivery. You can turn notifications off
-    per type in Settings, or entirely in your device settings; when a token stops
-    working we mark it inactive and stop sending to it.
-  </p>
-
-  <h2>Where your data is stored</h2>
-  <p>
-    Our database, authentication and file storage run on <strong>Supabase</strong>
-    in the <strong>Singapore</strong> region. Analytics are processed by PostHog
-    in the <strong>European Union</strong>. Push delivery is handled by
-    <strong>Expo</strong> and by Apple's and Google's notification services.
-  </p>
-  <p class="note">
-    This means personal data is transferred outside Thailand.
-    <span class="fill">[FILL: confirm the PDPA cross-border transfer basis you
-    are relying on, and list it here]</span>
-  </p>
-
-  <h2>Who can see what</h2>
-  <p>
-    Your <strong>profile</strong> (username, display name, bio, link, picture) and
-    any <strong>events you publish</strong> are public. Your
-    <strong>saved and going events, follows, blocked accounts, notification
-    settings and push tokens are private</strong> to you — enforced in the
-    database, not just in the app.
-  </p>
-  <p>
-    Blocking is mutual in effect: a blocked account cannot see you and you cannot
-    see them, in either direction.
-  </p>
-
-  <h2>Deleting your account</h2>
-  <p>
-    Settings → Delete account. You will be asked to type your username to
-    confirm. This permanently deletes your profile, saved and going events,
-    follows, blocked accounts, notifications, notification settings and push
-    tokens. It cannot be undone.
-  </p>
+  <p><strong>What is deleted:</strong></p>
+  <ul>
+    <li>your profile: username, display name, bio, link and language;</li>
+    <li>your saved events;</li>
+    <li>everything you follow, and any follows of your profile;</li>
+    <li>your blocked list, and any blocks of you;</li>
+    <li>your in-app notifications;</li>
+    <li>
+      your anonymous account and its active sign-in sessions. If the empty
+      sign-in record cannot be removed automatically, the app tells you.
+      Nothing else is attached to it any more, and you can email us to have it
+      removed.
+    </li>
+  </ul>
   <div class="callout">
-    <strong>One thing survives, deliberately.</strong> Events you
-    <em>published</em> stay in the public catalogue under your host name, and are
-    unlinked from your account. This is so people holding tickets to your event
-    are not stranded by your account deletion. If you want a published event
-    removed as well, cancel it before deleting your account, or contact us at
-    <span class="fill">[FILL: CONTACT EMAIL]</span>.
+    <p><strong>What stays after deletion:</strong></p>
+    <ul>
+      <li><strong>Events you published</strong> stay public, with your display name as the host name. They are no longer linked to your account.</li>
+      <li>Your <strong>host name</strong> stays on your host record, and people who followed you as a host keep following it.</li>
+      <li><strong>Cover images</strong> you uploaded stay online as public files. Their web address still contains your former account ID.</li>
+      <li><strong>Drafts and cancelled events</strong> stay in our database. No one can see them.</li>
+      <li><strong>Venues you added</strong> stay in the shared venue list.</li>
+      <li><strong>Reports you filed</strong> stay, without your account ID.</li>
+      <li>Notifications already in other people's lists that show your host name and event title.</li>
+      <li>Your <strong>analytics history at PostHog</strong>, linked to your former account ID.</li>
+      <li>The <strong>random installation ID</strong> that PostHog's software created when you first opened the app. It stays in the app's storage and is still sent to PostHog until you uninstall the app, so PostHog can connect your new anonymous account with your earlier analytics history.</li>
+      <li>Emails you sent us; entries about your account in the audit log of our hosting provider's sign-in system, which records IP addresses (see section 8); and technical logs until they expire.</li>
+    </ul>
+    <p>
+      If you want any of this removed, email
+      <span class="fill">[FILL: CONTACT EMAIL]</span>. Tell us your username
+      and the events concerned, ideally before you delete your account, so we
+      can find them. We will reply within 30 days.
+    </p>
   </div>
 
-  <h2>Event listings from other sources</h2>
+  <h2 id="uninstall">10. Uninstalling the app does not delete your data</h2>
   <p>
-    Some listings are gathered from public event calendars and venue websites.
-    For those we publish <strong>facts only</strong> — name, venue, date and
-    time, category and price — together with a link to the original listing. We
-    do not copy descriptions or artwork from other sites. If you are a source or
-    a rights-holder and want a listing changed or removed, contact
-    <span class="fill">[FILL: CONTACT EMAIL]</span> and we will act on it.
+    Deleting the app from your iPhone does not delete your account or anything
+    stored on our servers. iOS may also keep the account key in the Keychain,
+    so reinstalling the app may bring back the same account. To delete your
+    data, use <strong>Settings → Delete account</strong> before you uninstall.
+  </p>
+  <p>
+    Because we do not ask for an email address or phone number, we may not be
+    able to identify your account if you lose your device. If that happens,
+    email us with your username and any details you remember, and we will try
+    to help.
   </p>
 
-  <h2>Your rights</h2>
+  <h2 id="rights">11. Your rights</h2>
+  <p>Under the PDPA you have the right to:</p>
+  <ul>
+    <li><strong>access</strong> your personal data and get a <strong>copy</strong> of it, and ask how we obtained data you did not give us;</li>
+    <li>receive your data in a commonly used electronic format and have it sent to someone else (<strong>portability</strong>);</li>
+    <li><strong>object</strong> to our use of your data, including for analytics;</li>
+    <li>ask us to <strong>delete</strong> your data or make it anonymous;</li>
+    <li>ask us to <strong>restrict</strong> how we use your data;</li>
+    <li>ask us to <strong>correct</strong> data that is wrong or incomplete;</li>
+    <li><strong>withdraw your consent</strong> at any time where we rely on it, without affecting what we did before;</li>
+    <li><strong>complain</strong> to the Office of the Personal Data Protection Committee (PDPC), <a href="https://www.pdpc.or.th">www.pdpc.or.th</a>.</li>
+  </ul>
   <p>
-    Under the PDPA you may request access to, correction of, or deletion of your
-    personal data, object to processing, and withdraw consent. Deletion and
-    correction are available directly in the app; for anything else contact
-    <span class="fill">[FILL: CONTACT EMAIL]</span>.
-    <span class="fill">[FILL: response-time commitment, e.g. "within 30 days"]</span>
+    You can do some of this yourself in the app: edit your profile in
+    Settings → Edit profile, remove saves and follows, and delete your account
+    in Settings → Delete account. You can turn off location or photo access
+    at any time in iOS Settings → Eventpedia.
+  </p>
+  <p>
+    For anything else, email <span class="fill">[FILL: CONTACT EMAIL]</span>.
+    We may ask for details that show the account is yours, such as your
+    username. We will respond <strong>within 30 days</strong>, free of charge.
+    If the law allows us to refuse a request, we will tell you why.
+  </p>
+  <p>
+    The app has no switch to turn analytics off. If you object to analytics,
+    we will delete the analytics data linked to your account ID and tell you
+    how we will handle future analytics data about you.
   </p>
 
-  <h2>Children</h2>
+  <h2 id="children">12. Children</h2>
   <p>
-    EVENTPEDIA is not intended for anyone under <strong>18</strong>, and we do
-    not knowingly collect data from them. Some listings are additionally
-    restricted to 20+ by the venue or by law; the venue's rules apply.
+    EVENTPEDIA is not for anyone under <strong>18</strong>, and the
+    <a href="./terms.html">Terms</a> require users to be 18 or older. The app
+    does not ask for your age. If we learn that we hold data about someone
+    under 18, we will delete it. If you think a child is using the app,
+    please contact us.
   </p>
 
-  <h2>Changes</h2>
+  <h2 id="security">13. Security</h2>
   <p>
-    If we change this policy we will update the date at the top and, for
-    significant changes, tell you in the app.
+    The app connects to our servers and to PostHog only over encrypted
+    connections (HTTPS). The key to your account is stored in the iPhone
+    Keychain. Our database rules limit who can read what: for example, only
+    you can read your saved events, blocked list and notifications, and no
+    user can read individual reports, including the person who filed them.
+    Our moderation tools are available only to approved team members. No
+    system is completely secure, but if a data breach is likely to affect your rights, we will notify the PDPC and, where
+    required, you, as the PDPA requires.
+  </p>
+
+  <h2 id="changes">14. Changes to this policy</h2>
+  <p>
+    If we change this policy, we will update the effective date at the top.
+    If a change is significant, we will make reasonable efforts to tell you
+    before it takes effect, for example in an app update or on this page.
+  </p>
+
+  <h2 id="contact">15. Contact</h2>
+  <p>
+    <span class="fill">[FILL: COMPANY NAME]</span><br>
+    <span class="fill">[FILL: REGISTERED ADDRESS]</span><br>
+    Email: <span class="fill">[FILL: CONTACT EMAIL]</span><br>
+    Data protection contact (and our representative in Thailand, if we are established outside Thailand): <span class="fill">[FILL: DATA PROTECTION CONTACT]</span>
   </p>
 
   <p class="foot">
-    Questions: <span class="fill">[FILL: CONTACT EMAIL]</span> ·
-    <a href="./terms.html">Terms of Service</a>
+    <a href="./terms.html">Terms of Service</a> ·
+    <a href="./privacy-th.html" hreflang="th" lang="th">นโยบายความเป็นส่วนตัว (ภาษาไทย)</a>
   </p>
 </div>
 </body>
