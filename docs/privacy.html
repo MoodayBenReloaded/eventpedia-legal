@@ -157,9 +157,14 @@
     <strong>draft</strong> as soon as it has a title, and again shortly after
     each change (for a published event, when you tap <em>Save changes</em>).
     An event contains what you enter: title, description, category, venue,
-    date and times, price, number of spots, tags, whether it is a community
-    event, and an optional cover image. It is linked to your account ID. The
-    app does not save event text that contains obviously offensive words.
+    date and times, price, a ticket link, the lineup (artist names in
+    order), number of spots, tags, whether it is a community event, and an
+    optional cover image. It is linked to your account ID. The app does not
+    save event text, links or lineups that contain obviously offensive
+    words. Performers you name in the lineup can ask us to correct or remove
+    their name by emailing
+    <span class="fill">[FILL: CONTACT EMAIL]</span>,
+    and we may edit or remove a name ourselves.
   </p>
   <ul>
     <li><strong>Drafts</strong> are visible only to you. A cover image you add to a draft is the exception: it is a public file (see <em>Cover images</em> below).</li>
@@ -176,9 +181,9 @@
       the app, and anyone with a shared link can see them on our event web
       page without the app. Your <strong>display name is shown as the host
       name</strong>. Changes to the date, time and other details appear
-      straight away; changes to the title, description, tags, price, venue or
-      cover image send the event back to review, and it is hidden until they
-      are approved. The link between a published event and your account ID
+      straight away; changes to the title, description, tags, price, ticket
+      link, lineup, venue or cover image send the event back to review, and
+      it is hidden until they are approved. The link between a published event and your account ID
       can be read through our public data interface.
     </li>
     <li>When your event is approved, people who follow you as a host get a notification in the app with your host name and the event title.</li>
@@ -284,7 +289,8 @@
       screens viewed, events viewed, saved or shared (with the event's ID),
       filters and categories chosen, searches (length and number of results
       only), whether you followed or blocked (not who), creating, publishing or
-      cancelling an event, which profile fields you changed (not what you
+      cancelling an event, taps on <em>Get Tickets</em> (with the event's ID,
+      the name of the ticket seller and which button you tapped, not the link), which profile fields you changed (not what you
       wrote), and views and taps of sponsored placements and of our own advertising banner;
     </li>
     <li>
@@ -308,8 +314,8 @@
     PostHog <strong>never receives</strong> your search text, your exact
     location, your username, display name, bio or link, or the text of events
     you create. The app does not record your screen, does not send crash
-    reports, and does not send an event when you report something or tap a
-    ticket link.
+    reports, and does not send an event when you report something. It never
+    learns what you do on a ticket seller's page.
   </p>
   <p>
     We use analytics to count how often sponsored placements and our own
@@ -365,9 +371,12 @@
     uploads are kept in the app's cache.
   </p>
   <p>
-    Opening links: <em>Get Tickets</em>, <em>View source</em>, map directions
-    and profile links open in your browser or in the relevant app, and that
-    website's or app's own privacy policy applies. When you share an event, the
+    Opening links: <em>Get Tickets</em> opens the ticket seller's page in a
+    browser window inside the app (Safari's, on iPhone), where the seller's own
+    privacy policy applies. The app cannot see what you do there and never receives your payment details.
+    <em>View source</em>, map directions and profile links open in your
+    browser or in the relevant app. That website's or app's own privacy
+    policy applies. When you share an event, the
     link contains the event and the language, not who you are. <em>Add to
     calendar</em> creates a calendar file on your device; the app never reads
     your calendar. Some event images may load directly from the organiser's or
@@ -376,15 +385,23 @@
 
   <h3 id="public-sources">2.17 Event listings from public sources</h3>
   <p>
-    We gather listings from public sources such as event calendars, venue
-    and organiser websites and their public social media pages; our team also
-    compiles listings by hand, and some come from partners. A listing can
-    include the organiser's or host's name and the venue's details, and we
-    keep a copy of the source data and a link to it. Our team reviews each of
+    We collect listings from public sources in two ways: from event
+    calendars and websites that publish their events in a feed, and by hand,
+    when our team notes the facts of an event from public pages, including
+    organisers' social media pages. We do not use automated tools on social
+    media and never copy their descriptions or images, unless the organiser
+    gives us permission (see below). Some listings come from partners. A
+    listing can include the organiser's or host's name and a link to their
+    page, the names of the performers, the venue's details, and
+    links to the event's ticket page and to the page where we found it, and
+    we keep a copy of the source data. Our team reviews each of
     these listings before it is published, and published
     listings are public. Organisers and others named in a listing can ask us
     to correct or remove it by emailing
     <span class="fill">[FILL: CONTACT EMAIL]</span>.
+    When an organiser lets us publish their own description or photos, we
+    keep a record of who agreed, when and how, and their message, including
+    the email address or LINE account it came from.
   </p>
 
   <h2 id="not-collected">3. What we do not collect</h2>
@@ -441,9 +458,14 @@
         <td>Our legitimate interests in a usable shared venue list. You can ask us to remove them (section 9).</td>
       </tr>
       <tr>
-        <td>Publishing event listings gathered from public sources</td>
-        <td>Organiser and host names, venue details, source data and links (2.17)</td>
-        <td>Our legitimate interests in an accurate public event directory. You can object or ask us to correct or remove a listing (section 11).</td>
+        <td>Publishing event listings gathered from public sources, and the performer names hosts add to their events</td>
+        <td>Organiser, host and performer names, organiser and ticket links, venue details, source data and links (2.7, 2.17)</td>
+        <td>Our legitimate interests in an accurate public event directory. You can object or ask us to correct or remove a listing or a name (section 11).</td>
+      </tr>
+      <tr>
+        <td>Keeping records of permission to use an organiser's text and photos</td>
+        <td>Contact name, the email address or LINE account the permission came from, date, how permission was given, and the message (2.17)</td>
+        <td>Our legitimate interests in being able to show that we may publish them, and establishing or defending legal claims</td>
       </tr>
       <tr>
         <td>Answering your emails and requests</td>
@@ -581,6 +603,10 @@
       <tr>
         <td>Event listings from public sources, and our copy of the source data (2.17)</td>
         <td>Listings stay as long as they are published. Our copy of the source data stays until we delete it, and we will delete it on request; we do not currently delete it automatically.</td>
+      </tr>
+      <tr>
+        <td>Records of permission to use an organiser's text and photos (2.17)</td>
+        <td>While the text or photo is published, and 3 years after that</td>
       </tr>
       <tr>
         <td>Location and search text</td>
