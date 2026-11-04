@@ -37,7 +37,7 @@
     <li>You can browse EVENTPEDIA <strong>without giving us your name, email or phone number</strong>. The app creates an anonymous account for you automatically.</li>
     <li>If you create a profile, your <strong>username, display name, bio and link are public</strong>. So are the hosts and venues you follow, and any event you publish once our team has approved it.</li>
     <li>Your <strong>saved events and your blocked list are private</strong>.</li>
-    <li>Your <strong>location is used only to find events near you</strong>, and only if you allow it. We do not store it.</li>
+    <li>Your <strong>location is used only to find events near you and show how far away they are</strong>, and only if you allow it. We do not store it on our servers.</li>
     <li>We use <strong>PostHog</strong> to understand how the app is used. It never receives your search text, your exact location or your profile text. You can turn this off in <strong>Settings → Share usage analytics</strong>.</li>
     <li>We do not sell your data, use advertising networks, show ads targeted using your data, or track you across other companies' apps. Events that businesses pay us to promote are labelled.</li>
     <li><strong>Settings → Delete account</strong> removes your account and most of your data, including every event you created and its cover image. A few things stay, such as reports you filed. Section 9 lists exactly what, and how to ask us to remove the rest.</li>
@@ -81,7 +81,7 @@
   <ul>
     <li>a <strong>username</strong> and a <strong>display name</strong> (required);</li>
     <li>a short <strong>bio</strong> and a <strong>link</strong> (optional);</li>
-    <li>your <strong>app language</strong> (English or Thai). It starts as English and changes if you switch the language in Settings;</li>
+    <li>your <strong>app language</strong> (English or Thai). It starts as the language the app is in when you create your profile, and changes if you switch the language in Settings or with the EN/ไทย switch at the top of the app;</li>
     <li>when the profile was created and last changed.</li>
   </ul>
   <p>
@@ -239,25 +239,46 @@
 
   <h3>2.10 Location (only with your permission)</h3>
   <p>
-    The app asks for your location <strong>only when you tap
-    <em>Current location</em></strong> in the event filters, and only while
-    you are using the app. It never uses your location in the background. If
-    you say no, everything stays centred on Bangkok and keeps working.
+    The app asks for your location <strong>only when you tap <em>Near me</em></strong>
+    in the location menu at the top of the app's main screens, or <strong><em>Current
+    location</em></strong> in the event filters, and only while you are using the
+    app. It never uses your location in the background. If you say no,
+    everything stays on Bangkok and keeps working.
   </p>
   <p>If you allow it, your device's position is sent to our server:</p>
   <ul>
-    <li>when you use <em>Current location</em>, and</li>
+    <li>when you use <em>Near me</em> or <em>Current location</em>,</li>
+    <li>while <em>Near me</em> is on, each time you open the app (and when you come back to it after a few minutes), so distances stay right, and</li>
     <li>when you open the map later. The map then centres on your position and looks for events around it.</li>
   </ul>
   <p>
-    We use the position <strong>only to find events near you</strong>. We
-    <strong>do not save it in our database</strong>, we do not keep a location
-    history, and we <strong>never send it to our analytics provider</strong>.
-    Analytics only records whether you chose Bangkok, your current location or
-    a point on the map, not where you are. When you move the map or use
-    <em>Choose on map</em>, the app sends that point instead of your position.
-    The blue dot showing your position on the map is drawn by iOS on your
-    device. You can turn location off at any time in iOS Settings → Eventpedia.
+    Before sending, the app rounds your position to about 100 metres. We use
+    the position <strong>only to find events near you</strong> and how far away
+    they are. We <strong>do not save it in our database</strong>, we do not keep
+    a location history, and we <strong>never send it to our analytics
+    provider</strong>. Analytics only records whether you chose Bangkok,
+    <em>Near me</em> or an area, the distance you picked, and whether you allowed
+    location access, never where you are or which area. When you move the map,
+    choose an area or use <em>Choose on map</em>, the app sends that point
+    (rounded the same way) instead of your position. The blue dot showing your
+    position on the map is drawn by iOS on your device. You can turn location
+    off at any time in iOS Settings → Eventpedia.
+  </p>
+  <p>
+    If you have already allowed location, an event's page also uses your
+    position <strong>on your iPhone only</strong> to show how far away the
+    venue is. The event page never asks for your location. For this, your
+    position is not sent to our server or to our analytics provider, and it is
+    not stored: the app keeps it in memory only while an event's page is
+    open, and for 5 minutes at most after that. If you allowed only
+    approximate location, no distance is shown.
+  </p>
+  <p>
+    Your choice of location (Bangkok, <em>Near me</em>, or an area you picked on
+    the map, with its point and distance) is <strong>saved only on your
+    phone</strong>, so the app opens the same way next time. Like other app
+    data, it is part of your iPhone's own backups if you use them (2.16). It is
+    removed when you choose Bangkok, delete your account or remove the app.
   </p>
 
   <h3>2.11 Photos (only the ones you pick)</h3>
@@ -271,11 +292,28 @@
   <h3>2.12 Searches</h3>
   <p>
     When you search for events or venues, the text you type is sent to our
-    server to run the search. We do not save searches in our database. Because
-    the search text is part of the request address, it may appear in our
-    hosting provider's short-lived technical logs (see 2.14). It is never
-    sent to analytics: analytics records only how long the search was and how
-    many results it found.
+    server to run the search. To show suggestions, the app sends it as you
+    type, once you have typed two characters and paused. When a search finds
+    nothing, the app also searches for the same keys read on the other
+    keyboard layout (Thai or English), in case you typed on the wrong one,
+    and shows those results if there are any. We do not save searches in our
+    database. Because the search text is part of the request address, it may
+    appear in our hosting provider's short-lived technical logs (see 2.14). It
+    is never sent to analytics: analytics records only how long the search
+    was, how many results it found, how it was started and whether the other
+    keyboard layout was used.
+  </p>
+  <p>
+    <strong>Recent searches and recently opened events.</strong> The app keeps
+    your last 8 searches and the last 6 events you opened from search (their
+    ID, title, picture address and category) <strong>on your iPhone
+    only</strong>, so you can find them again. They are never sent to us or
+    to our analytics provider, and they are not part of your account. To
+    show the opened events with their current titles, the app asks our server
+    for those events by their IDs. You can clear the list in
+    <strong>Settings → Clear search history</strong>, or the recent searches
+    alone with <em>Clear all</em> on the search screen. Deleting your account
+    clears it on the iPhone you delete from, and deleting the app removes it.
   </p>
 
   <h3 id="analytics">2.13 Analytics (PostHog)</h3>
@@ -287,11 +325,17 @@
     <li>
       <strong>events about how you use the app</strong>, such as opening it,
       screens viewed, events viewed, saved or shared (with the event's ID),
-      filters and categories chosen, searches (length and number of results
-      only), whether you followed or blocked (not who), creating, publishing or
+      filters and categories chosen, searches (length, number of results, how
+      the search was started and whether the other keyboard layout was used),
+      which kind of suggestion you tapped (an event or a venue), its
+      position in the list and how many characters you had typed, whether you followed or blocked (not who), creating, publishing or
       cancelling an event, taps on <em>Get Tickets</em> (with the event's ID,
       the name of the ticket seller and which button you tapped, not the link), which profile fields you changed (not what you
-      wrote), and views and taps of sponsored placements and of our own advertising banner;
+      wrote), when you switch the app language (which language, and whether you used the switch at the top of the
+      screen or Settings), which <em>What's new</em> notes you open (and whether they opened by themselves or from
+      Settings), opening an event's picture full screen and tapping its category or tag chips or
+      <em>See more</em> (with the event's ID and whether it was a category or a tag, not which), the location you chose (Bangkok, <em>Near me</em> or an area, the distance, and whether
+      an area came from the place search or the map, never where) and whether you allowed location access, and views and taps of sponsored placements and of our own advertising banner;
     </li>
     <li>
       <strong>an identifier</strong>: before you have a profile, a random ID
@@ -364,8 +408,18 @@
   <p>
     The app stores some things on your device: the key to your account (in
     the Keychain), your language choice (also saved to your profile if you
-    have one, see 2.2), whether a one-time promotion has already been shown,
-    and your Share usage analytics choice (2.13). PostHog's software
+    have one, see 2.2), when you first opened the app and when the sponsored
+    pop-up was shown in the past 24 hours (so it appears at most once each time
+    the app starts, at least an hour apart, at most three times a day, and never
+    in your first three days),
+    which <em>What's new</em> notes you have already seen,
+    your recent searches and the events you opened from search (2.12),
+    your location choice (2.10), and
+    your Share usage analytics choice (2.13). Except for your recent searches,
+    the events you opened from search and your location choice, these are kept
+    in your iPhone's Keychain, which iOS keeps even after you delete the app
+    (see section 10). Like other app data, these are
+    part of your iPhone's own backups if you use them. PostHog's software
     keeps its IDs and any analytics events waiting to be sent in the app's
     storage. Temporary files for share images, calendar files and cover
     uploads are kept in the app's cache.
@@ -520,7 +574,9 @@
     </li>
     <li>
       <strong>Apple</strong> provides the maps in the app (Apple Maps), so
-      your device requests map images from Apple. Apple also distributes the
+      your device requests map images from Apple (on the Events map, when you
+      choose an area, and for the small map of the venue on an event's page).
+      Apple also distributes the
       app through the App Store. Apple handles this data under its own privacy
       policy.
     </li>
@@ -612,7 +668,7 @@
       </tr>
       <tr>
         <td>Location and search text</td>
-        <td>Not saved in our database. Used only for the request. Search text may appear in Supabase's technical logs, which are kept for no more than 7 days.</td>
+        <td>Not saved in our database. Used only for the request. Search text may appear in Supabase's technical logs, which are kept for no more than 7 days. Your location choice, recent searches and events opened from search are kept only on your phone and in its own backups (2.10, 2.12, 2.16).</td>
       </tr>
     </tbody>
   </table>
@@ -665,8 +721,11 @@
   <h2 id="uninstall">10. Uninstalling the app does not delete your data</h2>
   <p>
     Deleting the app from your iPhone does not delete your account or anything
-    stored on our servers. iOS may also keep the account key in the Keychain,
-    so reinstalling the app may bring back the same account. To delete your
+    stored on our servers. iOS also keeps what the app stores in the Keychain
+    (the account key, your language and Share usage analytics choices, which
+    <em>What's new</em> notes you have seen and the sponsored pop-up's times,
+    see 2.16), so reinstalling the app may bring back the same account and
+    settings. To delete your
     data, use <strong>Settings → Delete account</strong> before you uninstall.
   </p>
   <p>
