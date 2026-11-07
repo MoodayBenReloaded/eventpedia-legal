@@ -35,7 +35,7 @@
   <h2 id="short">The short version</h2>
   <ul>
     <li>You can browse EVENTPEDIA <strong>without giving us your name, email or phone number</strong>. The app creates an anonymous account for you automatically.</li>
-    <li>If you create a profile, your <strong>username, display name, bio and link are public</strong>. So are the hosts and venues you follow, and any event you publish once our team has approved it.</li>
+    <li>If you create a profile, your <strong>username, display name, bio and link are public</strong>. So are the hosts and venues you follow, and any event you publish once our team has approved it. The categories you pick as interests are private.</li>
     <li>Your <strong>saved events and your blocked list are private</strong>.</li>
     <li>Your <strong>location is used only to find events near you and show how far away they are</strong>, and only if you allow it. We do not store it on our servers.</li>
     <li>We use <strong>PostHog</strong> to understand how the app is used. It never receives your search text, your exact location or your profile text. You can turn this off in <strong>Settings → Share usage analytics</strong>.</li>
@@ -75,8 +75,8 @@
 
   <h3>2.2 Your profile (optional, public)</h3>
   <p>
-    You only need a profile to save events, follow hosts and venues, report or
-    block, and create events. A profile contains:
+    You only need a profile to save events, follow hosts and venues, pick
+    interests, report or block, and create events. A profile contains:
   </p>
   <ul>
     <li>a <strong>username</strong> and a <strong>display name</strong> (required);</li>
@@ -84,6 +84,15 @@
     <li>your <strong>app language</strong> (English or Thai). It starts as the language the app is in when you create your profile, and changes if you switch the language in Settings or with the EN/ไทย switch at the top of the app;</li>
     <li>when the profile was created and last changed.</li>
   </ul>
+  <p>
+    While you type your name, the app suggests a username made from the
+    English letters and numbers in it, and asks our server whether that
+    username, and up to three variations of it with two digits added, are
+    already taken. Nothing is saved in our database until you tap
+    <em>Create profile</em>, and you can change the suggestion. Because these
+    usernames are part of the request address, they may appear in our hosting
+    provider's short-lived technical logs (see 2.14).
+  </p>
   <p>
     <strong>This information is public.</strong> The app does not currently
     show other people's profiles, but anyone, including people who do not use
@@ -109,13 +118,33 @@
     can see your saved events.
   </p>
 
-  <h3>2.4 Follows (public)</h3>
+  <h3>2.4 Follows (public) and interests (private)</h3>
   <p>
-    You can follow hosts and venues from an event's page. We store who you
-    follow and when. <strong>Follows are public:</strong> anyone can read
-    which account ID follows which host or venue through our public data
-    interface, and the app shows follower counts. When a host you follow
-    publishes an event, you get a notification in the app (see 2.9).
+    You can follow hosts and venues from an event's page, and from the
+    suggestions the app shows after you create a profile. Nothing there is
+    followed until you tick it. We store who you follow and when.
+    <strong>Follows of hosts and venues are public:</strong>
+    anyone can read which account ID follows which host or venue through our
+    public data interface, and the app shows follower counts. When a host you
+    follow publishes an event, you get a notification in the app (see 2.9).
+  </p>
+  <p>
+    Right after you create a profile, the app asks which categories of events
+    you would go to. You can pick any number of them, or skip the step, and
+    change them at any time in Settings → Interests. We store which
+    categories you picked and when. <strong>Your interests are
+    private:</strong> only you can read them. The app uses them to show you
+    upcoming events in those categories and to suggest hosts and venues to
+    follow, and lists them for you under Profile → Follows. Our server works
+    out the suggestions from your interests and the upcoming events in our
+    listings each time the app asks for them, and does not keep them.
+  </p>
+  <p>
+    Home uses what you follow to pick events for you. <em>Picked for
+    you</em> shows upcoming events from the hosts and venues you follow, with
+    the name each one was picked for, and <em>You might like</em> shows
+    events in the categories you chose. Our server works these lists out each
+    time the app loads Home, and only you see them.
   </p>
 
   <h3>2.5 Blocks (private)</h3>
@@ -301,7 +330,10 @@
     appear in our hosting provider's short-lived technical logs (see 2.14). It
     is never sent to analytics: analytics records only how long the search
     was, how many results it found, how it was started and whether the other
-    keyboard layout was used.
+    keyboard layout was used. The search box on the host and venue
+    suggestions shown after you create a profile (2.4) also sends what you
+    type to our server as you type, to find hosts and venues; it is not saved
+    in our database or sent to analytics.
   </p>
   <p>
     <strong>Recent searches and recently opened events.</strong> The app keeps
@@ -328,12 +360,21 @@
       filters and categories chosen, searches (length, number of results, how
       the search was started and whether the other keyboard layout was used),
       which kind of suggestion you tapped (an event or a venue), its
-      position in the list and how many characters you had typed, whether you followed or blocked (not who), creating, publishing or
+      position in the list and how many characters you had typed, whether you followed or blocked (not who), when the
+      steps after creating a profile open and what opened them (the kind of action, as below), how many categories you
+      picked there and whether that changed your interests (not which), when you save Settings → Interests, how many
+      categories are picked and how many you added and removed (not which), how many hosts and venues you followed from the
+      suggestions and whether you searched them (not which, and not what you typed), and whether you skipped a step,
+      creating, publishing or
       cancelling an event, taps on <em>Get Tickets</em> (with the event's ID,
       the name of the ticket seller and which button you tapped, not the link), which profile fields you changed (not what you
-      wrote), when you switch the app language (which language, and whether you used the switch at the top of the
+      wrote), when the <em>Create profile</em> sheet opens or is closed and which kind of action opened it (saving,
+      following, reporting, blocking, hosting or changing a setting) and whether the action that opened it then
+      completed, and, when you create a profile, whether you
+      created it in that sheet or on the Profile tab and whether you kept the suggested username (not the username
+      itself), when you switch the app language (which language, and whether you used the switch at the top of the
       screen or Settings), which <em>What's new</em> notes you open (and whether they opened by themselves or from
-      Settings), opening an event's picture full screen and tapping its category or tag chips or
+      Settings), whether the <em>Tune your Home</em> card was shown, opened or closed, opening an event's picture full screen and tapping its category or tag chips or
       <em>See more</em> (with the event's ID and whether it was a category or a tag, not which), the location you chose (Bangkok, <em>Near me</em> or an area, the distance, and whether
       an area came from the place search or the map, never where) and whether you allowed location access, and views and taps of sponsored placements and of our own advertising banner;
     </li>
@@ -413,6 +454,11 @@
     the app starts, at least an hour apart, at most three times a day, and never
     in your first three days),
     which <em>What's new</em> notes you have already seen,
+    how many times you have opened the app since you created your profile and
+    whether you have used or closed the <em>Tune your Home</em> card (so it
+    appears from your third launch, only while you have picked no categories,
+    and never again once you have used or closed it; deleting your account
+    clears it on that iPhone),
     your recent searches and the events you opened from search (2.12),
     your location choice (2.10), and
     your Share usage analytics choice (2.13). Except for your recent searches,
@@ -484,7 +530,7 @@
     <thead><tr><th>Purpose</th><th>Data</th><th>Legal basis</th></tr></thead>
     <tbody>
       <tr>
-        <td>Running the app for you: your account, profile, saved events, follows, blocks, notifications, events and venues you create, searches</td>
+        <td>Running the app for you: your account, profile, saved events, follows, interests, blocks, notifications, events and venues you create, searches</td>
         <td>Sections 2.1 to 2.9, 2.12</td>
         <td>Performing our contract with you (the <a href="./terms.html">Terms</a>)</td>
       </tr>
@@ -631,8 +677,8 @@
         <td>Until you delete your account. We do not currently delete inactive accounts automatically. The sign-in system's audit log, which records IP addresses, is not removed when you delete your account and is not deleted automatically: we keep it while we need it for security, delete it when we no longer need it, and delete the entries about your account if you ask.</td>
       </tr>
       <tr>
-        <td>Profile, your record of agreeing to the Terms, saved events, follows, blocks, in-app notifications</td>
-        <td>Until you delete your account. Saved events, follows and blocks also end when you remove them in the app.</td>
+        <td>Profile, your record of agreeing to the Terms, saved events, follows, interests, blocks, in-app notifications</td>
+        <td>Until you delete your account. Saved events, follows, interests and blocks also end when you remove them in the app.</td>
       </tr>
       <tr>
         <td>Events you create (drafts, events in review or not approved, published and cancelled events), your host name and cover images</td>
@@ -667,8 +713,8 @@
         <td>While the text or photo is published, and 3 years after that</td>
       </tr>
       <tr>
-        <td>Location and search text</td>
-        <td>Not saved in our database. Used only for the request. Search text may appear in Supabase's technical logs, which are kept for no more than 7 days. Your location choice, recent searches and events opened from search are kept only on your phone and in its own backups (2.10, 2.12, 2.16).</td>
+        <td>Location, search text and suggested usernames</td>
+        <td>Not saved in our database. Used only for the request. Search text and the usernames checked while you type your name (2.2) may appear in Supabase's technical logs, which are kept for no more than 7 days. Your location choice, recent searches and events opened from search are kept only on your phone and in its own backups (2.10, 2.12, 2.16).</td>
       </tr>
     </tbody>
   </table>
@@ -723,8 +769,8 @@
     Deleting the app from your iPhone does not delete your account or anything
     stored on our servers. iOS also keeps what the app stores in the Keychain
     (the account key, your language and Share usage analytics choices, which
-    <em>What's new</em> notes you have seen and the sponsored pop-up's times,
-    see 2.16), so reinstalling the app may bring back the same account and
+    <em>What's new</em> notes you have seen, the sponsored pop-up's times and
+    the <em>Tune your Home</em> card's count, see 2.16), so reinstalling the app may bring back the same account and
     settings. To delete your
     data, use <strong>Settings → Delete account</strong> before you uninstall.
   </p>
