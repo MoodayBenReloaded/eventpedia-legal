@@ -120,12 +120,13 @@
 
   <h3>2.4 Follows (public) and interests (private)</h3>
   <p>
-    You can follow hosts and venues from an event's page, and from the
-    suggestions the app shows after you create a profile. Nothing there is
+    You can follow a host from an event's page or the organizer's page, a
+    venue from the venue's page or from search, and either from the suggestions the app shows after you create a profile. Nothing there is
     followed until you tick it. We store who you follow and when.
     <strong>Follows of hosts and venues are public:</strong>
     anyone can read which account ID follows which host or venue through our
-    public data interface, and the app shows follower counts. When a host you
+    public data interface, and the app shows a host's or venue's follower
+    count once it reaches 10, never who the followers are. When a host you
     follow publishes an event, you get a notification in the app (see 2.9).
   </p>
   <p>
@@ -160,16 +161,19 @@
     You can report an event from the bottom of its page, and a host (the name
     on an event's host card, which is a user's profile when a user published
     the event) from that card (<em>Report host</em>) or by pressing and holding
-    it in Profile → FOLLOWS → HOSTS. You choose one reason from a fixed list
+    it in Profile → FOLLOWS → HOSTS, and from ⋯ on the host's page. You can
+    report a venue from ⋯ on the venue's page. You choose one reason from a fixed list
     (for an event: spam or fake event, wrong or misleading details, offensive
     or harmful, impersonating someone, something else; for a host: spam or
     fake host, posts misleading events, abusive or offensive, impersonating
-    someone, something else). There is no free-text box. We store the reason,
-    what you reported (the event or the host), the time and your account ID.
+    someone, something else; for a venue: spam or fake venue, wrong name,
+    address or location, offensive or harmful, pretends to be another place,
+    something else). There is no free-text box. We store the reason, what you
+    reported (the event, the host or the venue), the time and your account ID.
   </p>
   <p>
     The host is not told who reported their event or them. Our moderators'
-    review screen shows how many reports an event or host has and the
+    review screen shows how many reports an event, host or venue has and the
     reasons, not who filed them; for a host that belongs to a user, it also
     shows that user's username. Only people with administrative access to
     our database can see the reporter's account ID. We keep it so we can
@@ -219,6 +223,15 @@
     </li>
     <li>When your event is approved, people who follow you as a host get a notification in the app with your host name and the event title.</li>
     <li>
+      Your host name also has its own <strong>organizer page</strong> in the
+      app. It shows your host name, a description if the host has one, your
+      published events (upcoming ones and the 10 most recent past ones), the
+      venues of those events and, from 10, how many people follow you as a
+      host; it never shows who they are. It does not show drafts, events in
+      review or cancelled events. Others can follow, report or block you from
+      that page (see 2.5, 2.6 and the <a href="./terms.html#blocking">Terms</a>).
+    </li>
+    <li>
       You can <strong>cancel</strong> a published event. It then disappears
       from public view, but it is not deleted and you can submit it for
       review again.
@@ -251,7 +264,9 @@
     gets the same venue only by adding a new venue with exactly the same name
     (capital letters and spaces before or after the name do not count). Once
     an event that uses your venue is public, the venue's name, area and address are shown with
-    that event. The shared list, including the link between your venue and
+    that event. Every venue also has its own page in the app, which shows its
+    name, area and address, its published events and, from 10, how many
+    people follow it; it never shows who added it. The shared list, including the link between your venue and
     your account ID, can be read through our public data interface. When you
     delete your account,
     a venue you added is deleted too, unless another event uses it or someone
@@ -338,13 +353,14 @@
     in our database or sent to analytics.
   </p>
   <p>
-    <strong>Recent searches and recently opened events.</strong> The app keeps
-    your last 8 searches and the last 6 events you opened from search (their
-    ID, title, picture address and category) <strong>on your iPhone
-    only</strong>, so you can find them again. They are never sent to us or
-    to our analytics provider, and they are not part of your account. To
-    show the opened events with their current titles, the app asks our server
-    for those events by their IDs. You can clear the list in
+    <strong>Recent searches and recently opened events and venues.</strong>
+    The app keeps your last 8 searches and the last 6 events and venues you
+    opened from search (an event's ID, title, picture address and category; a
+    venue's ID, name and area) <strong>on your iPhone only</strong>, so you
+    can find them again. They are never sent to us or to our analytics
+    provider, and they are not part of your account. To show them with their
+    current names, the app asks our server for those events and venues by
+    their IDs. You can clear the list in
     <strong>Settings → Clear search history</strong>, or the recent searches
     alone with <em>Clear all</em> on the search screen. Deleting your account
     clears it on the iPhone you delete from, and deleting the app removes it.
@@ -359,6 +375,9 @@
     <li>
       <strong>events about how you use the app</strong>, such as opening it,
       screens viewed, events viewed, saved or shared (with the event's ID),
+      venue and organizer pages viewed (with the page's ID and where you
+      opened it from, such as an event, search, the event editor, another
+      venue or organizer page, or a link),
       filters and categories chosen, searches (length, number of results, how
       the search was started and whether the other keyboard layout was used),
       which kind of suggestion you tapped (an event or a venue), its
@@ -463,10 +482,10 @@
     appears from your third launch, only while you have picked no categories,
     and never again once you have used or closed it; deleting your account
     clears it on that iPhone),
-    your recent searches and the events you opened from search (2.12),
+    your recent searches and the events and venues you opened from search (2.12),
     your location choice (2.10), and
     your Share usage analytics choice (2.13). Except for your recent searches,
-    the events you opened from search and your location choice, these are kept
+    the events and venues you opened from search and your location choice, these are kept
     in your iPhone's Keychain, which iOS keeps even after you delete the app
     (see section 10). Like other app data, these are
     part of your iPhone's own backups if you use them. PostHog's software
@@ -596,7 +615,7 @@
     the technical data in 2.13 and 2.14 come with using the app at all. You
     can browse, search, filter, view the map, open events, share them and add
     them to your calendar without a profile. You need a profile to save
-    events, follow hosts and venues, report events and hosts, block someone and create
+    events, follow hosts and venues, report events, hosts and venues, block someone and create
     events; without one, those features are not available. Location and photo
     access are optional: without location the app centres on Bangkok, and you
     can publish an event without a cover image.
@@ -718,7 +737,7 @@
       </tr>
       <tr>
         <td>Location, search text and suggested usernames</td>
-        <td>Not saved in our database. Used only for the request. Search text and the usernames checked while you type your name (2.2) may appear in Supabase's technical logs, which are kept for no more than 7 days. Your location choice, recent searches and events opened from search are kept only on your phone and in its own backups (2.10, 2.12, 2.16).</td>
+        <td>Not saved in our database. Used only for the request. Search text and the usernames checked while you type your name (2.2) may appear in Supabase's technical logs, which are kept for no more than 7 days. Your location choice, recent searches and events and venues opened from search are kept only on your phone and in its own backups (2.10, 2.12, 2.16).</td>
       </tr>
     </tbody>
   </table>
