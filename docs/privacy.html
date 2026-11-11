@@ -213,7 +213,10 @@
     <li>
       <strong>Approved events are public.</strong> Everyone can see them in
       the app, and anyone with a shared link can see them on our event web
-      page without the app. Your <strong>display name is shown as the host
+      page without the app. When a link to an event without a cover image is
+      shared, our event web page also gives the chat app a preview picture we
+      draw from the event's title, date, venue and category on our own
+      artwork. Your <strong>display name is shown as the host
       name</strong>. Changes to the date, times and other details appear
       straight away; switching <em>All day</em> on or off, or changing the
       title, description, tags, price (including free or paid), ticket link
@@ -342,12 +345,21 @@
     type, once you have typed two characters and paused. When a search finds
     nothing, the app also searches for the same keys read on the other
     keyboard layout (Thai or English), in case you typed on the wrong one,
-    and shows those results if there are any. We do not save searches in our
-    database. Because the search text is part of the request address, it may
-    appear in our hosting provider's short-lived technical logs (see 2.14). It
-    is never sent to analytics: analytics records only how long the search
-    was, how many results it found, how it was started and whether the other
-    keyboard layout was used. The search box on the host and venue
+    and shows those results if there are any. If that finds nothing too, our
+    server compares what you typed with the names of events and venues listed
+    now, to find a close spelling. When one is close enough, the app shows its
+    results under “Showing results for …”, with a link to search for exactly
+    what you typed; otherwise it may offer up to three close names to tap. We
+    do not save searches in our database. Because the search text is part of
+    the request (in its address, or in its body for the close-spelling check),
+    it may appear in our hosting provider's short-lived technical logs (see
+    2.14). It is never sent to analytics: analytics records only how long the
+    search was, how many results it found, how it was started (including from
+    a suggested close name), whether the other keyboard layout or a close
+    spelling was used, whether a result was found only by its Thai name, and
+    whether you went back to what you typed; for a suggested name you tap,
+    only its position, whether it is an event or a venue, and whether it
+    showed the name in the other language. The search box on the host and venue
     suggestions shown after you create a profile (2.4) also sends what you
     type to our server as you type, to find hosts and venues; it is not saved
     in our database or sent to analytics.
@@ -379,9 +391,13 @@
       opened it from, such as an event, search, the event editor, another
       venue or organizer page, or a link),
       filters and categories chosen, searches (length, number of results, how
-      the search was started and whether the other keyboard layout was used),
-      which kind of suggestion you tapped (an event or a venue), its
-      position in the list and how many characters you had typed, whether you followed or blocked (not who), when the
+      the search was started, whether the other keyboard layout or a close
+      spelling was used, and whether a result was found only by its Thai
+      name), whether you went back to what you typed,
+      which kind of suggestion or suggested close name you tapped (an event or
+      a venue), its position in the list, whether it showed the name in the
+      other language, how many close names were offered
+      and how many characters you had typed, whether you followed or blocked (not who), when the
       steps after creating a profile open and what opened them (the kind of action, as below), how many categories you
       picked there and whether that changed your interests (not which), when you save Settings → Interests, how many
       categories are picked and how many you added and removed (not which), how many hosts and venues you followed from the
@@ -705,7 +721,7 @@
       </tr>
       <tr>
         <td>Events you create (drafts, events in review or not approved, published and cancelled events), your host name and cover images</td>
-        <td>Until you delete your account, or earlier if we delete them at your request. Copies of cover images in our hosting provider's network cache can stay reachable for up to an hour after deletion.</td>
+        <td>Until you delete your account, or earlier if we delete them at your request. Copies of cover images in our hosting provider's network cache can stay reachable for up to an hour after deletion. Preview pictures of your events that our event web page made can stay in web caches for up to a day.</td>
       </tr>
       <tr>
         <td>Venues you add</td>
@@ -774,6 +790,7 @@
     <ul>
       <li><strong>Venues you added</strong> that another event uses or someone follows stay in the shared venue list, without the link to your account.</li>
       <li>Copies of your cover images in our hosting provider's network cache can stay reachable at their old web address for up to an hour.</li>
+      <li>Preview pictures of your events that our event web page made can stay in web caches for up to a day. Chat apps keep their own copies of link previews, which we cannot delete.</li>
       <li><strong>Reports you filed</strong> stay, without your account ID. Reports other people filed about your events, your host name or your profile also stay, as a moderation record (section 8).</li>
       <li>Your <strong>analytics history at PostHog</strong>, linked to your former account ID.</li>
       <li>The <strong>random installation ID</strong> that PostHog's software created when you first opened the app. It stays in the app's storage and is still sent to PostHog until you uninstall the app or turn off Share usage analytics (2.13), so PostHog can connect your new anonymous account with your earlier analytics history.</li>
