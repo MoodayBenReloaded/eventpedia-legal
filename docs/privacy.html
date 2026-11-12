@@ -69,6 +69,81 @@
     keeps technical records for the account, such as when it was created and
     last used, and the IP address and device type of its sign-in sessions.
   </p>
+  <p id="sign-in-with-apple">
+    <strong>Sign in with Apple (optional, when the app offers it).</strong>
+    You can add Sign in with Apple to your account, so you keep it and can get
+    it back on another iPhone. Your account ID stays the same, so your profile,
+    saved events and follows stay with it. Apple then sends us a sign-in token
+    with an identifier for you that is unique to our app, the email address you
+    chose to share (your own, or an Apple private relay address that forwards
+    to it) and whether Apple has verified it. We store the identifier and the
+    email address with your account in our hosting provider's sign-in system.
+    They are <strong>not public</strong>: they are not part of your profile,
+    other users never see them, and only you can see the email address, in
+    Settings. The first time you use Sign in with Apple, Apple can also give
+    the app the name on your Apple ID. The app only uses it to fill in the Name
+    field of a new profile, which you can change before you tap
+    <em>Create profile</em>; it is not stored anywhere else. We never receive
+    your Apple ID password.
+  </p>
+  <p id="apple-revoke">
+    When you sign in with Apple, Apple gives the app a one-time code. Our
+    server sends it to Apple and receives a token that lets us ask Apple to
+    end Eventpedia's access to your Apple ID. We store this token on our
+    server, where only our server code can read it, and use it for nothing
+    else. When you delete your account we send it to Apple to revoke that
+    access (section 9). You can also remove Eventpedia yourself in your
+    iPhone's Settings, under your name, Sign-In &amp; Security, Sign in with
+    Apple.
+  </p>
+  <p id="sign-in-with-email">
+    <strong>Signing in with your email (optional, when the app offers it).</strong>
+    You can add your email address to your account, so you can sign in to the
+    same account on another iPhone or after reinstalling the app. We send a
+    6-digit code to that address, and the address is added once you enter the
+    code in the app. To sign in on another iPhone, you enter the address and
+    the code we send to it. Your email address is account data: it is
+    <strong>not public</strong>, it is never shown on your profile or to other
+    users, and we do not use it for newsletters or marketing. We use it only
+    to send you sign-in codes. Our hosting provider's sign-in system stores
+    the address with your account, together with when it was confirmed and
+    the codes we sent, which are stored only as scrambled (hashed) copies and
+    work for 10 minutes. The emails are delivered by an email delivery
+    provider acting on our behalf; it is named in section 6 before email
+    sign-in is offered. If someone else enters your address, you may get a
+    code you did not ask for; without the code nobody can sign in. When you
+    sign in on an iPhone that has its own anonymous account, the next
+    paragraph explains what happens to that iPhone's data.
+  </p>
+  <p id="new-iphone">
+    <strong>Signing in on another iPhone.</strong> If you sign in to your
+    account on an iPhone that already has its own anonymous account with a
+    profile, the app first shows what will happen, and nothing changes if you
+    tap <em>Cancel</em>. If you continue, the saved events, follows,
+    interests, blocks, reports and in-app notifications of that anonymous
+    account are added to your account, and the iPhone's registration for push
+    notifications moves to it. Your account's profile is kept and the
+    anonymous account's profile is deleted; if your account has no profile
+    yet, the anonymous account's profile, with its followers, becomes your
+    account's profile. The anonymous account is then deleted in the same way
+    as with Delete account (section 9). An anonymous account with events you
+    created is not merged: you can keep using it, or delete it first. To make
+    this work, the app gets a one-time code from our server before you sign
+    in, and keeps it in your iPhone's Keychain until it has been used. We keep
+    only a scrambled (hashed) copy of the code. The code works once and only
+    for 30 minutes, and we delete the copy at the latest 7 days after the app
+    got it. If the move reaches our server only after the 30 minutes (for
+    example, because the connection dropped), nothing is moved, but the
+    anonymous account is still deleted, unless it has events you created, so
+    that no profile is left behind that nobody can remove.
+  </p>
+  <p id="sign-out">
+    <strong>Signing out.</strong> An account you can sign back into, with
+    Apple or your email, can sign out in Settings. Signing out ends the
+    session on this iPhone only, clears this iPhone's recent searches,
+    location choice and the <em>Tune your Home</em> count, and starts a new
+    anonymous account. Nothing is deleted from your account.
+  </p>
   <p>
     The app creates a new anonymous account again after you delete your account.
   </p>
@@ -409,7 +484,18 @@
       (price, how guests get in, spots or community; never what you entered), which profile fields you changed (not what you
       wrote), when the <em>Create profile</em> sheet opens or is closed and which kind of action opened it (saving,
       following, reporting, blocking, hosting or changing a setting) and whether the action that opened it then
-      completed, and, when you create a profile, whether you
+      completed, whether you started Sign in with Apple, where (that sheet or Settings) and how it ended (signed in,
+      cancelled, already used by another account, not available, a connection problem or another error; never your
+      email or name), whether you chose <em>More options</em> instead, whether you added an email address or signed
+      in with one, where (that sheet or Settings), whether a code was sent again, and why a code could not be sent or
+      checked (never the address or the code), when you delete an account that uses Sign in
+      with Apple, whether asking Apple to end our access worked (done, nothing to end, not available or failed),
+      when you sign in to your account on another iPhone (2.1), whether the app offered to move that iPhone's data,
+      whether you cancelled, how many saves, follows, interests and blocks were added (not which), whether that
+      iPhone's profile became your account's profile and whether its anonymous account was deleted, and where it
+      stopped if it failed (never a username or the one-time code), when you sign out, which sign-in method the account
+      uses, and,
+      when you create a profile, whether you
       created it in that sheet or on the Profile tab and whether you kept the suggested username (not the username
       itself), when you switch the app language (which language, and whether you used the switch at the top of the
       screen or Settings), which <em>What's new</em> notes you open (and whether they opened by themselves or from
@@ -547,7 +633,7 @@
 
   <h2 id="not-collected">3. What we do not collect</h2>
   <ul>
-    <li>No sign-in with email or phone number, and no passwords.</li>
+    <li>No passwords and no sign-in with a phone number. We collect an email address only if you add one to sign in (section 2.1).</li>
     <li>No contacts, calendar, camera, microphone or clipboard contents.</li>
     <li>No profile photos.</li>
     <li>No push notification tokens. The app does not ask for notification permission.</li>
@@ -569,7 +655,7 @@
     <thead><tr><th>Purpose</th><th>Data</th><th>Legal basis</th></tr></thead>
     <tbody>
       <tr>
-        <td>Running the app for you: your account, profile, saved events, follows, interests, blocks, notifications, events and venues you create, searches</td>
+        <td>Running the app for you: your account and its email sign-in, profile, saved events, follows, interests, blocks, notifications, events and venues you create, searches</td>
         <td>Sections 2.1 to 2.9, 2.12</td>
         <td>Performing our contract with you (the <a href="./terms.html">Terms</a>)</td>
       </tr>
@@ -663,7 +749,10 @@
       choose an area, and for the small map of the venue on an event's page).
       Apple also distributes the
       app through the App Store. Apple handles this data under its own privacy
-      policy.
+      policy. If you use Sign in with Apple, Apple confirms who you are to us
+      and sends the data described in 2.1. Our server also contacts Apple when
+      you sign in (to exchange the one-time code) and when you delete your
+      account (to revoke Eventpedia's access).
     </li>
     <li>
       <strong>GitHub</strong> hosts these web pages, including this policy
@@ -712,8 +801,20 @@
     <thead><tr><th>Data</th><th>How long</th></tr></thead>
     <tbody>
       <tr>
-        <td>Anonymous account and its sign-in records</td>
-        <td>Until you delete your account. We do not currently delete inactive accounts automatically. The sign-in system's audit log, which records IP addresses, is not removed when you delete your account and is not deleted automatically: we keep it while we need it for security, delete it when we no longer need it, and delete the entries about your account if you ask.</td>
+        <td>Your account (anonymous, or with Sign in with Apple or email), the Apple identifier and email address stored with it, and its sign-in records</td>
+        <td>Until you delete your account. We do not currently delete inactive accounts automatically. The sign-in system's audit log, which records IP addresses and, if you added one, your email address, is not removed when you delete your account and is not deleted automatically: we keep it while we need it for security, delete it when we no longer need it, and delete the entries about your account if you ask.</td>
+      </tr>
+      <tr>
+        <td>Your email address, if you added one, and the sign-in codes sent to it (2.1)</td>
+        <td>Until you delete your account. Each code stops working after 10 minutes.</td>
+      </tr>
+      <tr>
+        <td>One-time code for signing in on another iPhone (2.1)</td>
+        <td>A hashed copy. The code works for 30 minutes; the copy is kept at most 7 days, so that a sign-in that finishes late can still remove the old anonymous account</td>
+      </tr>
+      <tr>
+        <td>Apple token for ending Eventpedia's access (only if you sign in with Apple) (2.1)</td>
+        <td>Until you delete your account. Then, without your account ID, until Apple confirms the revocation, at most 30 days</td>
       </tr>
       <tr>
         <td>Profile, your record of agreeing to the Terms, saved events, follows, interests, blocks, in-app notifications</td>
@@ -782,8 +883,11 @@
       your anonymous account and its active sign-in sessions. If the empty
       sign-in record cannot be removed automatically, the app tells you.
       Nothing else is attached to it any more, and you can email us to have it
-      removed.
+      removed. If you added Sign in with Apple, the Apple identifier and email
+      address stored with your account are deleted with it.
     </li>
+    <li>your email address, if you added one, and the sign-in codes sent to it;</li>
+    <li>if you signed in with Apple, Eventpedia's access to your Apple ID: we first ask Apple to end it, using the token described in 2.1.</li>
   </ul>
   <div class="callout">
     <p><strong>What stays after deletion:</strong></p>
@@ -794,6 +898,7 @@
       <li><strong>Reports you filed</strong> stay, without your account ID. Reports other people filed about your events, your host name or your profile also stay, as a moderation record (section 8).</li>
       <li>Your <strong>analytics history at PostHog</strong>, linked to your former account ID.</li>
       <li>The <strong>random installation ID</strong> that PostHog's software created when you first opened the app. It stays in the app's storage and is still sent to PostHog until you uninstall the app or turn off Share usage analytics (2.13), so PostHog can connect your new anonymous account with your earlier analytics history.</li>
+      <li>If Apple cannot be reached when you delete your account, the <strong>Apple token</strong> (2.1), without your account ID, until Apple confirms the revocation, at most 30 days. We try again during that time.</li>
       <li>Emails you sent us; entries about your account in the audit log of our hosting provider's sign-in system, which records IP addresses (see section 8); and technical logs until they expire.</li>
     </ul>
     <p>
@@ -815,10 +920,11 @@
     data, use <strong>Settings → Delete account</strong> before you uninstall.
   </p>
   <p>
-    Because we do not ask for an email address or phone number, we may not be
-    able to identify your account if you lose your device. If that happens,
+    If you have not added Sign in with Apple or an email address, we may not
+    be able to identify your account if you lose your device. If that happens,
     email us with your username and any details you remember, and we will try
-    to help.
+    to help. If you signed in with Apple or your email, you can get your
+    account back on a new iPhone by signing in the same way (2.1).
   </p>
 
   <h2 id="rights">11. Your rights</h2>
