@@ -35,12 +35,12 @@
   <h2 id="short">The short version</h2>
   <ul>
     <li>You can browse EVENTPEDIA <strong>without giving us your name, email or phone number</strong>. The app creates an anonymous account for you automatically.</li>
-    <li>If you create a profile, your <strong>username, display name, bio and link are public</strong>. So are the hosts and venues you follow, and any event you publish once our team has approved it. The categories you pick as interests are private.</li>
+    <li>If you create a profile, your <strong>username, display name, bio and link are public</strong>. So are the hosts, venues and artists you follow, and any event you publish once our team has approved it. The categories you pick as interests are private.</li>
     <li>Your <strong>saved events and your blocked list are private</strong>.</li>
     <li>Your <strong>location is used only to find events near you and show how far away they are</strong>, and only if you allow it. We do not store it on our servers.</li>
     <li>We use <strong>PostHog</strong> to understand how the app is used. It never receives your search text, your exact location or your profile text. You can turn this off in <strong>Settings → Share usage analytics</strong>.</li>
     <li>We do not sell your data, use advertising networks, show ads targeted using your data, or track you across other companies' apps. Events that businesses pay us to promote are labelled.</li>
-    <li><strong>Settings → Delete account</strong> removes your account and most of your data, including every event you created and its cover image. A few things stay, such as reports you filed. Section 9 lists exactly what, and how to ask us to remove the rest.</li>
+    <li><strong>Settings → Delete account</strong> removes your account and most of your data, including every event you created and its cover image and photos. A few things stay, such as reports you filed. Section 9 lists exactly what, and how to ask us to remove the rest.</li>
   </ul>
 
   <h2 id="who">1. Who is responsible for your data</h2>
@@ -196,13 +196,15 @@
   <h3>2.4 Follows (public) and interests (private)</h3>
   <p>
     You can follow a host from an event's page or the organizer's page, a
-    venue from the venue's page or from search, and either from the suggestions the app shows after you create a profile. Nothing there is
+    venue from the venue's page or from search, an artist from the artist's
+    page, and hosts and venues from the suggestions the app shows after you create a profile. Nothing there is
     followed until you tick it. We store who you follow and when.
-    <strong>Follows of hosts and venues are public:</strong>
-    anyone can read which account ID follows which host or venue through our
-    public data interface, and the app shows a host's or venue's follower
+    <strong>Follows of hosts, venues and artists are public:</strong>
+    anyone can read which account ID follows which host, venue or artist through our
+    public data interface, and the app shows a host's, venue's or artist's follower
     count once it reaches 10, never who the followers are. When a host you
     follow publishes an event, you get a notification in the app (see 2.9).
+    Following a venue or an artist sends no notifications.
   </p>
   <p>
     Right after you create a profile, the app asks which categories of events
@@ -217,10 +219,12 @@
   </p>
   <p>
     Home uses what you follow to pick events for you. <em>Picked for
-    you</em> shows upcoming events from the hosts and venues you follow, with
+    you</em> shows upcoming events from the hosts, venues and artists you follow, with
     the name each one was picked for, and <em>You might like</em> shows
     events in the categories you chose. Our server works these lists out each
-    time the app loads Home, and only you see them.
+    time the app loads Home, and only you see them. Cards and lists also show
+    the name of an artist you follow who plays an event; the app works this
+    out from your follows and the lineups our team links.
   </p>
 
   <h3>2.5 Blocks (private)</h3>
@@ -237,18 +241,23 @@
     on an event's host card, which is a user's profile when a user published
     the event) from that card (<em>Report host</em>) or by pressing and holding
     it in Profile → FOLLOWS → HOSTS, and from ⋯ on the host's page. You can
-    report a venue from ⋯ on the venue's page. You choose one reason from a fixed list
+    report a venue from ⋯ on the venue's page, and an artist from ⋯ on the
+    artist's page. You choose one reason from a fixed list
     (for an event: spam or fake event, wrong or misleading details, offensive
     or harmful, impersonating someone, something else; for a host: spam or
     fake host, posts misleading events, abusive or offensive, impersonating
     someone, something else; for a venue: spam or fake venue, wrong name,
     address or location, offensive or harmful, pretends to be another place,
+    something else; for an artist: spam or fake artist page, wrong details,
+    links or photo, offensive or harmful, pretends to be someone else,
     something else). There is no free-text box. We store the reason, what you
-    reported (the event, the host or the venue), the time and your account ID.
+    reported (the event, the host, the venue or the artist), the time and your account ID.
+    A report of an event also covers its photos, and our moderators can
+    remove a single photo.
   </p>
   <p>
     The host is not told who reported their event or them. Our moderators'
-    review screen shows how many reports an event, host or venue has and the
+    review screen shows how many reports an event, host, venue or artist has and the
     reasons, not who filed them; for a host that belongs to a user, it also
     shows that user's username. Only people with administrative access to
     our database can see the reporter's account ID. We keep it so we can
@@ -267,8 +276,12 @@
     An event contains what you enter: title, description, category, venue,
     date and times, price, a ticket link or that guests pay at the door,
     the lineup (artist names in order), number of spots, tags, whether it is
-    a community event, and an
-    optional cover image. It is linked to your account ID. The app does not
+    a community event, an
+    optional cover image and up to seven more photos, an age limit (all ages, 18+ or 20+), short notes on
+    the dress code, refunds and access, and up to six questions with your answers. You can also give your event page a look: a
+    colour, a font for the event name and a background effect, all chosen from options in the app (no text). To suggest colours,
+    the app reads a small copy of your cover image on your phone; that copy is not sent anywhere and is deleted straight away.
+    It is linked to your account ID. The app does not
     save event text, links or lineups that contain obviously offensive
     words. Performers you name in the lineup can ask us to correct or remove
     their name by emailing
@@ -276,14 +289,14 @@
     and we may edit or remove a name ourselves.
   </p>
   <ul>
-    <li><strong>Drafts</strong> are visible only to you. A cover image you add to a draft is the exception: it is a public file (see <em>Cover images</em> below).</li>
+    <li><strong>Drafts</strong> are visible only to you. A cover image or photo you add to a draft is the exception: it is a public file (see <em>Cover images and photos</em> below).</li>
     <li>
       <strong>Events are reviewed before they are public.</strong> When you publish, the
       event goes to our moderators and shows as <em>In review</em>; until they approve it,
       only you and they can see it. If they do not approve it, it goes back to your drafts
       with the reason. We store the review status, when you submitted the event, when and
       by which moderator it was reviewed (kept where only our staff can see it), and the
-      reason if it was not approved.
+      reason if it was not approved. We keep the same record for each photo.
     </li>
     <li>
       <strong>Approved events are public.</strong> Everyone can see them in
@@ -291,12 +304,18 @@
       page without the app. When a link to an event without a cover image is
       shared, our event web page also gives the chat app a preview picture we
       draw from the event's title, date, venue and category on our own
-      artwork. Your <strong>display name is shown as the host
-      name</strong>. Changes to the date, times and other details appear
+      artwork, or on the event's look when it has one. Your <strong>display name is shown as the host
+      name</strong>. Changes to the date, times, the look and other details appear
       straight away; switching <em>All day</em> on or off, or changing the
       title, description, tags, price (including free or paid), ticket link
-      or how guests get in, lineup, venue or cover image, sends the event
-      back to review, and it is hidden until the changes are approved. The link between a published event and your account ID
+      or how guests get in, lineup, venue, cover image, Good to know
+      details, or questions and answers, sends the event back to review, and it is hidden until the changes are approved.
+      Each photo you add to a published event is checked on its own: it
+      stays hidden until it is approved, and the event stays public
+      meanwhile. Approved photos are shown after the cover on the event's
+      page in the app and on our event web page. Removing or reordering
+      photos takes effect straight away. Our moderators can reset an event's look to the standard page.
+      The link between a published event and your account ID
       can be read through our public data interface.
     </li>
     <li>When your event is approved, people who follow you as a host get a notification in the app with your host name and the event title.</li>
@@ -319,18 +338,21 @@
     </li>
   </ul>
   <p>
-    <strong>Cover images.</strong> You pick a cover image from your photo
-    library. Before upload the app resizes it (1280 pixels wide) and saves it
-    as a new JPEG file <strong>without the original photo's metadata</strong>,
-    such as where and when it was taken or the camera model. The image is
-    uploaded as soon as you choose it, even for a draft. Each new cover image
-    is saved as a new file, and the app deletes the file it replaces. It is
-    stored as a <strong>public file that anyone can view</strong>, even while
-    the event is a draft or in review, or after it is cancelled, and the
-    file's address contains your
-    account ID. The image stays online if you cancel the event. It is deleted
-    from our file storage when you delete your account (section 9), or
-    earlier if you ask us.
+    <strong>Cover images and photos.</strong> You pick a cover image and up
+    to seven more photos from your photo library. Before upload the app
+    resizes each one (1280 pixels wide) and saves it as a new JPEG file
+    <strong>without the original photo's metadata</strong>, such as where
+    and when it was taken or the camera model. Each one is uploaded as soon
+    as you choose it, even for a draft, and saved as a new file, together
+    with its width and height; the app deletes the file of a cover image it
+    replaces and of a photo you remove. Every file is stored as a
+    <strong>public file that anyone with its address can view</strong>, even
+    before we approve it: while the event is a draft or in review, after it
+    is cancelled, or if we do not approve it. The file's address contains
+    your account ID. Photos we do not approve are hidden in the app and on
+    our event web page, and stay in our file storage until you remove them.
+    Your files are deleted from our file storage when you delete your
+    account (section 9), or earlier if you ask us.
   </p>
 
   <h3>2.8 Venues you add</h3>
@@ -408,8 +430,8 @@
   <h3>2.11 Photos (only the ones you pick)</h3>
   <p>
     The app asks for access to your photo library only when you tap to add a
-    cover image to an event. Only the photo you pick is uploaded, processed as
-    described in 2.7. The app does not use your camera. You can change photo
+    cover image or photos to an event. Only the photos you pick are uploaded,
+    processed as described in 2.7. You can pick several at once. The app does not use your camera. You can change photo
     access at any time in iOS Settings → Eventpedia.
   </p>
 
@@ -481,7 +503,16 @@
       cancelling an event, taps on <em>Get Tickets</em> (with the event's ID,
       the name of the ticket seller and which button you tapped, not the link), taps on <em>Add to calendar</em> (with the
       event's ID and which button you tapped), which of an event's settings you changed when you closed its settings
-      (price, how guests get in, spots or community; never what you entered), which profile fields you changed (not what you
+      (price, how guests get in, spots or community, with the event's ID; never what you entered),
+      adding, removing or reordering an
+      event's photos (with the event's ID and how many photos it then has; never the pictures), which Good to know
+      details you changed when you applied them (age, dress code, refunds or access, with the event's ID;
+      never what you chose or typed),
+      adding, editing, removing or reordering an event's questions (with the event's ID and how many questions it then
+      has; never a question or an answer), the look you chose for an event when you closed its look sheet (with the
+      event's ID, where its colour came from (the cover, a theme, your own colour or none), the title font and the
+      effect, and whether you used Shuffle; never the colour itself or the emoji), our moderators resetting an
+      event's look (with the event's ID and where it was reset), which profile fields you changed (not what you
       wrote), when the <em>Create profile</em> sheet opens or is closed and which kind of action opened it (saving,
       following, reporting, blocking, hosting or changing a setting) and whether the action that opened it then
       completed, whether you started Sign in with Apple, where (that sheet or Settings) and how it ended (signed in,
@@ -499,7 +530,9 @@
       created it in that sheet or on the Profile tab and whether you kept the suggested username (not the username
       itself), when you switch the app language (which language, and whether you used the switch at the top of the
       screen or Settings), which <em>What's new</em> notes you open (and whether they opened by themselves or from
-      Settings), whether the <em>Tune your Home</em> card was shown, opened or closed, opening an event's picture full screen and tapping its category or tag chips or
+      Settings), whether the <em>Tune your Home</em> card was shown, opened or closed, opening an artist page (with the
+      artist's ID and where you opened it from) and which kind of link you opened there (Instagram, Facebook, music or
+      another site; never the link), opening an event's pictures full screen (with the event's ID, which picture and how many the event has) and tapping its category or tag chips or
       <em>See more</em> (with the event's ID and whether it was a category or a tag, not which), the location you chose (Bangkok, <em>Near me</em> or an area, the distance, and whether
       an area came from the place search or the map, never where) and whether you allowed location access, and views and taps of sponsored placements and of our own advertising banner;
     </li>
@@ -553,7 +586,8 @@
     their systems record technical details of each request, such as your IP
     address, the device or app type (user agent), the time and the address of
     the request. Our event web page creates the same kind of logs for anyone
-    who opens a shared link. Supabase keeps these logs for no more than 7
+    who opens a shared link, and for the font file it loads from our own server
+    when an event has a look with its own font (no other company receives it). Supabase keeps these logs for no more than 7
     days, for security and to keep the service running. At PostHog, the same
     technical details arrive with the analytics data and are kept with it: our
     PostHog plan lets us use that data for 1 year (free plan) or 7 years (paid
@@ -592,8 +626,8 @@
     (see section 10). Like other app data, these are
     part of your iPhone's own backups if you use them. PostHog's software
     keeps its IDs and any analytics events waiting to be sent in the app's
-    storage. Temporary files for share images, calendar files and cover
-    uploads are kept in the app's cache.
+    storage. Temporary files for share images, calendar files and cover and
+    photo uploads are kept in the app's cache.
   </p>
   <p>
     Opening links: <em>Get Tickets</em> opens the ticket seller's page in a
@@ -631,6 +665,23 @@
     the email address or LINE account it came from.
   </p>
 
+  <h3 id="artists">2.18 Artist pages</h3>
+  <p>
+    Our team creates pages for some performers who appear in our listings. A
+    page shows the artist's name (and their own Thai name, if they use one),
+    a short factual bio, up to three links to their own public pages, and the
+    events our team has linked them to. We write these from public
+    information and from what the artist or their team tells us. A page
+    shows a photo only when the artist or their team gave us permission or
+    we took it ourselves; otherwise it shows initials. For each photo we keep
+    a record of how we may use it (who agreed, how and when, without contact
+    details), and we delete that record when the photo is removed. Names in a
+    listing's lineup are never linked to a page automatically: our team links
+    each one by hand. Artists can ask us to correct or remove their page by
+    reporting it from ⋯ on the page or by emailing
+    <span class="fill">[FILL: CONTACT EMAIL]</span>.
+  </p>
+
   <h2 id="not-collected">3. What we do not collect</h2>
   <ul>
     <li>No passwords and no sign-in with a phone number. We collect an email address only if you add one to sign in (section 2.1).</li>
@@ -665,9 +716,9 @@
         <td>Performing our contract when you ask for nearby events (you control access through the iOS permission and can turn it off at any time)</td>
       </tr>
       <tr>
-        <td>Adding a cover image to your event</td>
-        <td>The photo you pick (2.11)</td>
-        <td>Performing our contract when you add a cover image to your event (you control access through the iOS permission and can turn it off at any time)</td>
+        <td>Adding a cover image or photos to your event</td>
+        <td>The photos you pick (2.11)</td>
+        <td>Performing our contract when you add a cover image or photos to your event (you control access through the iOS permission and can turn it off at any time)</td>
       </tr>
       <tr>
         <td>Keeping the service safe: reviewing events before they are published, refusing text with offensive words, handling reports, moderating content, enforcing the Terms, preventing abuse, security</td>
@@ -688,6 +739,11 @@
         <td>Publishing event listings gathered from public sources, and the performer names hosts add to their events</td>
         <td>Organiser, host and performer names, organiser and ticket links, venue details, source data and links (2.7, 2.17)</td>
         <td>Our legitimate interests in an accurate public event directory. You can object or ask us to correct or remove a listing or a name (section 11).</td>
+      </tr>
+      <tr>
+        <td>Publishing artist pages our team curates</td>
+        <td>Artist names, Thai names, short bios, links to their public pages, photos we may use, the events they are linked to, and the photo permission record (2.18)</td>
+        <td>Our legitimate interests in an accurate public event directory; for photos, the artist's permission or our own rights. Artists can object or ask us to correct or remove their page (section 11).</td>
       </tr>
       <tr>
         <td>Keeping records of permission to use an organiser's text and photos</td>
@@ -717,7 +773,7 @@
     the technical data in 2.13 and 2.14 come with using the app at all. You
     can browse, search, filter, view the map, open events, share them and add
     them to your calendar without a profile. You need a profile to save
-    events, follow hosts and venues, report events, hosts and venues, block someone and create
+    events, follow hosts, venues and artists, report events, hosts, venues and artists, block someone and create
     events; without one, those features are not available. Location and photo
     access are optional: without location the app centres on Bangkok, and you
     can publish an event without a cover image.
@@ -762,8 +818,8 @@
     </li>
     <li>
       <strong>Other users and the public</strong> can see your public data:
-      your profile, your follows, events you publish with your host name and
-      cover images, and venues you add. Everyone can also see the event
+      your profile, your follows, events you publish with your host name,
+      cover images and approved photos, and venues you add. Everyone can also see the event
       listings we gather from public sources (2.17).
     </li>
     <li>
@@ -821,8 +877,8 @@
         <td>Until you delete your account. Saved events, follows, interests and blocks also end when you remove them in the app.</td>
       </tr>
       <tr>
-        <td>Events you create (drafts, events in review or not approved, published and cancelled events), your host name and cover images</td>
-        <td>Until you delete your account, or earlier if we delete them at your request. Copies of cover images in our hosting provider's network cache can stay reachable for up to an hour after deletion. Preview pictures of your events that our event web page made can stay in web caches for up to a day.</td>
+        <td>Events you create (drafts, events in review or not approved, published and cancelled events), your host name, cover images and photos</td>
+        <td>Until you delete your account, or earlier if we delete them at your request. Copies of cover images and photos in our hosting provider's network cache can stay reachable for up to an hour after deletion. Preview pictures of your events that our event web page made can stay in web caches for up to a day.</td>
       </tr>
       <tr>
         <td>Venues you add</td>
@@ -853,6 +909,10 @@
         <td>While the text or photo is published, and 3 years after that</td>
       </tr>
       <tr>
+        <td>Artist pages (2.18)</td>
+        <td>Until our team removes them or the artist asks us to. The photo permission record: as long as the photo is shown.</td>
+      </tr>
+      <tr>
         <td>Location, search text and suggested usernames</td>
         <td>Not saved in our database. Used only for the request. Search text and the usernames checked while you type your name (2.2) may appear in Supabase's technical logs, which are kept for no more than 7 days. Your location choice, recent searches and events and venues opened from search are kept only on your phone and in its own backups (2.10, 2.12, 2.16).</td>
       </tr>
@@ -875,7 +935,7 @@
     <li>your blocked list, and any blocks of you;</li>
     <li>your in-app notifications;</li>
     <li>every event you created, whether it is a draft, in review, not approved, published or cancelled. It disappears for everyone, together with other people's saves of it and the in-app notifications about it;</li>
-    <li>the cover images you uploaded, deleted from our file storage;</li>
+    <li>the cover images and photos you uploaded, deleted from our file storage;</li>
     <li>your host name: the host record created when you first submitted an event for review, and everyone's follows of it;</li>
     <li>venues you added that no other event uses and nobody follows;</li>
     <li>notifications in other people's lists that name you, for example that you are going to an event;</li>
@@ -893,7 +953,7 @@
     <p><strong>What stays after deletion:</strong></p>
     <ul>
       <li><strong>Venues you added</strong> that another event uses or someone follows stay in the shared venue list, without the link to your account.</li>
-      <li>Copies of your cover images in our hosting provider's network cache can stay reachable at their old web address for up to an hour.</li>
+      <li>Copies of your cover images and photos in our hosting provider's network cache can stay reachable at their old web address for up to an hour.</li>
       <li>Preview pictures of your events that our event web page made can stay in web caches for up to a day. Chat apps keep their own copies of link previews, which we cannot delete.</li>
       <li><strong>Reports you filed</strong> stay, without your account ID. Reports other people filed about your events, your host name or your profile also stay, as a moderation record (section 8).</li>
       <li>Your <strong>analytics history at PostHog</strong>, linked to your former account ID.</li>
